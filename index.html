@@ -158,6 +158,7 @@ h2{font-size:16px;font-weight:700;margin:0 0 12px}
     <li><a href="#" data-t="drugs">💊 Препараты</a></li>
     <li><a href="#" data-t="tests">🧪 Анализы</a></li>
     <li><a href="#" data-t="lifestyle">🌿 Жизнь</a></li>
+    <li><a href="#" data-t="results">📈 Картина</a></li>
   </ul>
 </div>
 
@@ -595,27 +596,27 @@ h2{font-size:16px;font-weight:700;margin:0 0 12px}
 
 <!-- ══════════════════ АНАЛИЗЫ ══════════════════ -->
 <section class="sec" id="tests">
-<div class="note note-info" style="margin-bottom:12px">🔴 Срочно — 1–2 недели &nbsp;|&nbsp; 🟡 Важно — в течение месяца &nbsp;|&nbsp; 🟢 Плановые — 2–3 месяца</div>
+<div class="note note-info" style="margin-bottom:12px">✅ Сдано &nbsp;|&nbsp; ⏳ Плановые &nbsp;|&nbsp; ❌ Не сдано. При поступлении новых результатов статусы обновляются.</div>
 
-<div class="ag"><h3>🔴 Срочно (1–2 недели)</h3>
-<div class="ai"><div class="ai-n n1">1</div><div class="ai-b"><div class="aname">HFE-мутации (C282Y, H63D, S65C) — гемохроматоз</div><div class="ameta"><span>Венозная кровь</span><span>2 000–3 000 ₽</span><span>5–10 дней</span></div><div class="awhy">Гепатомегалия + железо 39,9 при рационе без мяса = высокая вероятность. Определяет, можно ли делать капельницы и принимать аскорбинку.</div></div></div>
-<div class="ai"><div class="ai-n n1">2</div><div class="ai-b"><div class="aname">MTHFR полиморфизм (C677T, A1298C)</div><div class="ameta"><span>Венозная кровь</span><span>1 500–2 000 ₽</span><span>3–5 дней</span></div><div class="awhy">Гомоцистеин 16,3 при нормальном B12 и фолатах → скорее MTHFR. При мутации — нужен метилфолат, обычная фолиевая кислота не работает.</div></div></div>
-<div class="ai"><div class="ai-n n1">3</div><div class="ai-b"><div class="aname">Трансферрин + ОЖСС + % насыщения</div><div class="ameta"><span>Венозная кровь</span><span>600–900 ₽</span><span>1 день</span></div><div class="awhy">Дополнение к HFE. Насыщение &gt;45% подтверждает накопление железа ещё до генетики. Быстрый первый шаг.</div></div></div>
-<div class="ai"><div class="ai-n n1">4</div><div class="ai-b"><div class="aname">MAR-тест + АСАТ в сыворотке крови</div><div class="ameta"><span>Эякулят + кровь</span><span>2 500–4 000 ₽</span><span>1–3 дня</span></div><div class="awhy">IgA 46%, IgG 39% в марте 2025 — пограничные. Нужна динамика для выбора тактики ВРТ.</div></div></div>
+<div class="ag"><h3>🔴 Срочные</h3>
+<div class="ai"><div class="ai-n n3" style="background:var(--green)">1</div><div class="ai-b"><div class="aname">✅ HFE-мутации (C282Y, H63D, S65C) — сдано 05.04.2026</div><div class="ameta"><span style="background:var(--green-bg);color:var(--green);border-color:var(--green-bd)">Результат получен</span></div><div class="awhy">H63D гетерозигота — клинически незначима. Насыщение трансферрина 32,8% — норма. Гемохроматоза нет. Капельницы безопасны.</div></div></div>
+<div class="ai"><div class="ai-n n3" style="background:var(--green)">2</div><div class="ai-b"><div class="aname">✅ MTHFR + MTRR + MTR полиморфизм — сдано 05.04.2026</div><div class="ameta"><span style="background:var(--green-bg);color:var(--green);border-color:var(--green-bd)">Результат получен</span></div><div class="awhy">MTHFR C677T гетерозигота + MTR A/G — объясняют гомоцистеин 16,3. Принимаем Jarrow Methyl B12+Метилфолат обоснованно.</div></div></div>
+<div class="ai"><div class="ai-n n3" style="background:var(--green)">3</div><div class="ai-b"><div class="aname">✅ Трансферрин + ОЖСС + % насыщения — сдано 05.04.2026</div><div class="ameta"><span style="background:var(--green-bg);color:var(--green);border-color:var(--green-bd)">Результат получен</span></div><div class="awhy">ОЖСС 63,1, насыщение 32,8% — норма. Гемохроматоз подтверждён окончательно исключён.</div></div></div>
+<div class="ai"><div class="ai-n n3" style="background:var(--green)">4</div><div class="ai-b"><div class="aname">✅ Антиспермальные АТ в сыворотке (ASAB) — сдано 05.04.2026</div><div class="ameta"><span style="background:var(--green-bg);color:var(--green);border-color:var(--green-bd)">Результат получен</span></div><div class="awhy">18,08 МЕ/мл — норма (&lt;55). Системного АСАТ-фактора нет. MAR-тест в планах в повторной спермограмме.</div></div></div>
 </div>
 
-<div class="ag"><h3>🟡 Важные (в течение месяца)</h3>
-<div class="ai"><div class="ai-n n2">5</div><div class="ai-b"><div class="aname">Фрагментация ДНК сперматозоидов (DFI)</div><div class="ameta"><span>Эякулят</span><span>5 000–8 000 ₽</span><span>3–5 дней</span></div><div class="awhy">При стойкой тератозооспермии — ключевой тест перед ВРТ. DFI &gt;25% → нужен ИКСИ.</div></div></div>
-<div class="ai"><div class="ai-n n2">6</div><div class="ai-b"><div class="aname">УЗИ мошонки с допплером</div><div class="ameta"><span>УЗИ</span><span>2 000–4 000 ₽</span><span>по записи</span></div><div class="awhy">Исключить субклиническое варикоцеле — частая причина тератозооспермии. Пока не делалось.</div></div></div>
-<div class="ai"><div class="ai-n n2">7</div><div class="ai-b"><div class="aname">Анализ кишечного микробиома / посев на дисбиоз</div><div class="ameta"><span>Кал</span><span>3 000–6 000 ₽</span><span>7–14 дней</span></div><div class="awhy">Пневматоз + дисхолия + ImmunoHealth-реакция на кандиду — уточнить характер дисбиоза.</div></div></div>
+<div class="ag"><h3>🟡 Важные</h3>
+<div class="ai"><div class="ai-n n3" style="background:var(--green)">5</div><div class="ai-b"><div class="aname">✅ Фрагментация ДНК сперматозоидов (DFI) — сдано 27.03.2026</div><div class="ameta"><span style="background:var(--green-bg);color:var(--green);border-color:var(--green-bd)">Результат получен</span></div><div class="awhy">DFI 13% — отлично (&lt;15%). ДНК сохранна. ЭКО предпочтительнее ИКСИ.</div></div></div>
+<div class="ai"><div class="ai-n n2">6</div><div class="ai-b"><div class="aname">❌ УЗИ мошонки с допплером</div><div class="ameta"><span>УЗИ</span><span>2 000–4 000 ₽</span><span>по записи</span></div><div class="awhy">Исключить субклиническое варикоцеле — частая причина тератозооспермии. Пока не сдано.</div></div></div>
+<div class="ai"><div class="ai-n n2">7</div><div class="ai-b"><div class="aname">❌ Анализ кишечного микробиома / посев на дисбиоз</div><div class="ameta"><span>Кал</span><span>3 000–6 000 ₽</span><span>7–14 дней</span></div><div class="awhy">Пневматоз + дисхолия + ImmunoHealth-реакция на кандиду — уточнить характер дисбиоза.</div></div></div>
 </div>
 
-<div class="ag"><h3>🟢 Плановые (2–3 месяца)</h3>
-<div class="ai"><div class="ai-n n3">8</div><div class="ai-b"><div class="aname">Контроль витамина D (25-OH)</div><div class="ameta"><span>Кровь</span><span>600–900 ₽</span><span>1 день</span></div><div class="awhy">Через 2–3 мес после D3 10 000 МЕ. Цель: 60–70 нг/мл.</div></div></div>
-<div class="ai"><div class="ai-n n3">9</div><div class="ai-b"><div class="aname">Контроль гомоцистеина</div><div class="ameta"><span>Кровь</span><span>700–1 000 ₽</span><span>1 день</span></div><div class="awhy">После 2–3 мес B-витаминной терапии. Цель: &lt;10 мкмоль/л.</div></div></div>
-<div class="ai"><div class="ai-n n3">10</div><div class="ai-b"><div class="aname">Контроль ТТГ</div><div class="ameta"><span>Кровь</span><span>300–500 ₽</span><span>1 день</span></div><div class="awhy">ТТГ снизился с 4,2 до 3,19. Оптимум 1,5–2,5. Контроль через 3 мес.</div></div></div>
-<div class="ai"><div class="ai-n n3">11</div><div class="ai-b"><div class="aname">Повторная спермограмма</div><div class="ameta"><span>Эякулят</span><span>2 000–4 000 ₽</span><span>1–2 дня</span></div><div class="awhy">Через 3–4 мес — один цикл сперматогенеза. Главный контроль эффективности лечения.</div></div></div>
-<div class="ai"><div class="ai-n n3">12</div><div class="ai-b"><div class="aname">Стероидный профиль (слюна) — повтор</div><div class="ameta"><span>Слюна</span><span>4 000–6 000 ₽</span><span>5–7 дней</span></div><div class="awhy">Через 3 мес. Оценить динамику андростендиона и тестостерона на фоне ашваганды.</div></div></div>
+<div class="ag"><h3>🟢 Плановые</h3>
+<div class="ai"><div class="ai-n n2">8</div><div class="ai-b"><div class="aname">⏳ Контроль витамина D (25-OH)</div><div class="ameta"><span>Кровь</span><span>600–900 ₽</span><span>1 день</span></div><div class="awhy">Через 2–3 мес после D3 10 000 МЕ. Цель: 60–70 нг/мл.</div></div></div>
+<div class="ai"><div class="ai-n n2">9</div><div class="ai-b"><div class="aname">⏳ Контроль гомоцистеина</div><div class="ameta"><span>Кровь</span><span>700–1 000 ₽</span><span>1 день</span></div><div class="awhy">После 2–3 мес B-витаминной терапии. Цель: &lt;10 мкмоль/л.</div></div></div>
+<div class="ai"><div class="ai-n n2">10</div><div class="ai-b"><div class="aname">⏳ Контроль ТТГ</div><div class="ameta"><span>Кровь</span><span>300–500 ₽</span><span>1 день</span></div><div class="awhy">ТТГ снизился с 4,2 до 3,19. Оптимум 1,5–2,5. Контроль через 3 мес.</div></div></div>
+<div class="ai"><div class="ai-n n2">11</div><div class="ai-b"><div class="aname">⏳ Повторная спермограмма (после Пурегона, 15.05.2026)</div><div class="ameta"><span>Эякулят</span><span>2 000–4 000 ₽</span><span>1–2 дня</span></div><div class="awhy">Через 3–4 мес — один цикл сперматогенеза. Главный контроль эффективности лечения.</div></div></div>
+<div class="ai"><div class="ai-n n2">12</div><div class="ai-b"><div class="aname">⏳ Стероидный профиль (слюна) — повтор</div><div class="ameta"><span>Слюна</span><span>4 000–6 000 ₽</span><span>5–7 дней</span></div><div class="awhy">Через 3 мес. Оценить динамику андростендиона и тестостерона на фоне ашваганды.</div></div></div>
 </div>
 </section>
 
@@ -667,6 +668,146 @@ h2{font-size:16px;font-weight:700;margin:0 0 12px}
 <tr><td>Максимум</td><td>1–2 бокала вина в неделю, не чаще</td></tr>
 <tr><td>Исключить</td><td>Крепкое, пиво (дрожжи + фитоэстрогены)</td></tr>
 </table></div></div>
+
+</section>
+
+<!-- ══════════════════ АНАЛИЗЫ ══════════════════ -->
+<section class="sec" id="results">
+
+<div class="note note-info" style="margin-bottom:14px">Комплексная интерпретация всех анализов за период март 2025 — апрель 2026. Акцент на фертильность и общее здоровье.</div>
+
+<!-- СПЕРМОГРАММЫ -->
+<div class="lc" style="border-left:4px solid var(--red)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--red-bg)">
+  <div class="lt" style="color:var(--red)">🔬 Спермограммы — динамика 2025–2026</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>27.03.2025</td><td><b>ОАТ.</b> Концентрация 14 млн/мл, подвижность PR 21%, морфология 1%. Норм. формы критически низкие.</td></tr>
+    <tr><td>01.10.2025</td><td><b>ОАТ (провал).</b> Концентрация упала до 3,5 млн/мл, PR 11%. Вероятно — стрессовый эпизод или воспаление.</td></tr>
+    <tr><td>20.12.2025</td><td><b>АТ.</b> Концентрация восстановилась (16 млн/мл), подвижность PR 20%. Слизь в эякуляте — простатит.</td></tr>
+    <tr><td>27.03.2026</td><td><b>Тератозооспермия.</b> <span style="color:var(--green);font-weight:700">Прорыв по подвижности: PR 46%, общая 60% ↑↑</span>. Морфология 2% — всё ещё проблема.</td></tr>
+  </table>
+  <div class="note note-warn" style="margin-top:10px"><b>Главная проблема:</b> стойкая тератозооспермия (1–2% норм. форм при норме ≥4%) на протяжении всего года. Хорошая новость: подвижность значимо улучшилась на фоне диеты — организм реагирует.</div>
+</div></div>
+
+<!-- ДНК СПЕРМЫ -->
+<div class="lc" style="border-left:4px solid var(--green)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--green-bg)">
+  <div class="lt" style="color:var(--green)">🧬 Фрагментация ДНК (DFI) — 27.03.2026</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>DFI</td><td><b style="color:var(--green)">13% — отлично</b> (норма &lt;15%)</td></tr>
+    <tr><td>Вывод</td><td>ДНК внутри сперматозоидов сохранна. Тератозооспермия — проблема формы, а не генетического материала. При ЭКО — хороший прогноз развития эмбрионов.</td></tr>
+    <tr><td>Тактика ВРТ</td><td>ЭКО предпочтительно (не обязательно ИКСИ при DFI 13%)</td></tr>
+  </table>
+</div></div>
+
+<!-- ГОРМОНЫ -->
+<div class="lc" style="border-left:4px solid var(--yellow)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--yellow-bg)">
+  <div class="lt" style="color:var(--yellow)">⚗️ Гормональный профиль</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>Тестостерон (кровь)</td><td>18,2 нмоль/л — формально норма, фактически нижняя половина для 45 лет. Оптимум 20–30 нмоль/л.</td></tr>
+    <tr><td>ЛГ / ФСГ / Пролактин</td><td>Все в норме. Гипофиз работает корректно — проблема не в нём.</td></tr>
+    <tr><td>ГСПГ</td><td>28,9 нмоль/л — нижняя треть нормы. Свободный тестостерон расчётно нормальный.</td></tr>
+    <tr><td>Ингибин В / АМГ</td><td>Оба в норме — тяжёлого органического поражения яичка нет. Прогноз благоприятный.</td></tr>
+    <tr><td>Эстрадиол</td><td>65,3 пмоль/л — норма. Гиперэстрогении нет.</td></tr>
+    <tr><td>ТТГ</td><td>4,20 → 3,19 мкМЕ/мл. <span style="color:var(--green)">Положительная динамика</span>. Оптимум для сперматогенеза 1,5–2,5. АТ к ТПО/ТГ — норма (аутоиммунного тиреоидита нет).</td></tr>
+  </table>
+  <div class="note note-info" style="margin-top:10px"><b>Ключевой вывод:</b> нормогонадотропный характер бесплодия — ось гипофиз–яичко сохранна, но яичко отвечает субоптимально (подтверждён полиморфизм FSHR G/A). Пурегон назначен именно для усиления этого ответа.</div>
+</div></div>
+
+<!-- СТЕРОИДНЫЙ ПРОФИЛЬ -->
+<div class="lc" style="border-left:4px solid var(--orange)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--orange-bg)">
+  <div class="lt" style="color:var(--orange)">⚡ Стероидный профиль слюны (янв 2026)</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>Андростендион</td><td><b style="color:var(--red)">130 пг/мл при норме 315–790</b> — критически снижен</td></tr>
+    <tr><td>Кортизон</td><td><b style="color:var(--red)">6310 при норме 23895–33960</b> — значительно снижен</td></tr>
+    <tr><td>Прегненолон</td><td>1160 пг/мл — повышен (норма 573–665). Феномен «прегненолон-стил».</td></tr>
+    <tr><td>Тестостерон</td><td>221,76 пг/мл — нижняя треть нормы</td></tr>
+    <tr><td>Серотонин</td><td><b style="color:var(--yellow)">44,46 нг/мл при норме 50–220</b> — снижен</td></tr>
+  </table>
+  <div class="note note-warn" style="margin-top:10px"><b>Картина хронического стресса:</b> организм «крадёт» прегненолон для стресс-реакции в ущерб половым гормонам. Это биохимически подавляет сперматогенез. Ашваганда + нормализация сна — ключевые инструменты коррекции.</div>
+</div></div>
+
+<!-- ГЕНЕТИКА -->
+<div class="lc" style="border-left:4px solid var(--purple)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--purple-bg)">
+  <div class="lt" style="color:var(--purple)">🧬 Генетические полиморфизмы</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>MTHFR C677T</td><td><b>Гетерозигота C/T</b> — снижение активности фермента на ~35%. Объясняет гомоцистеин 16,3. Нужен метилфолат, не обычная фолиевая кислота!</td></tr>
+    <tr><td>MTR 2756 A&gt;G</td><td><b>Гетерозигота A/G</b> — нарушение реметилирования гомоцистеина. Усиливает эффект MTHFR.</td></tr>
+    <tr><td>FSHR G/A</td><td><b>Гетерозигота</b> — рецептор ФСГ менее чувствителен. Объясняет субоптимальный ответ яичка при нормальном ФСГ. Пурегон компенсирует это напрямую.</td></tr>
+    <tr><td>HFE (гемохроматоз)</td><td>H63D гетерозигота — <b style="color:var(--green)">клинически незначимо</b>. Насыщение трансферрина 32,8% — норма. Гемохроматоза нет.</td></tr>
+    <tr><td>MTHFR A1298C / MTRR</td><td>Нейтральные генотипы — норма</td></tr>
+  </table>
+  <div class="note note-good" style="margin-top:10px"><b>Хорошая новость:</b> серьёзных генетических причин бесплодия не выявлено. Полиморфизмы функциональные — хорошо корректируются питанием и нутриентами.</div>
+</div></div>
+
+<!-- БИОХИМИЯ -->
+<div class="lc" style="border-left:4px solid var(--blue)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--blue-bg)">
+  <div class="lt" style="color:var(--blue)">🩸 Биохимия крови — ключевые отклонения</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>Гомоцистеин</td><td><b style="color:var(--red)">16,3 мкмоль/л</b> (норма &lt;12). Объяснён MTHFR+MTR. Корректируется Jarrow B12+Метилфолат+B6-P5P.</td></tr>
+    <tr><td>Железо сывороточное</td><td><b style="color:var(--yellow)">39,9 мкмоль/л</b> (норма &lt;32,2). HFE исключён. Насыщение трансферрина 32,8% — норма. Контроль 1 раз в год.</td></tr>
+    <tr><td>Витамин D</td><td>30 нг/мл — нижняя граница. Цель лечения: 60–70 нг/мл. Контроль в мае.</td></tr>
+    <tr><td>Цинк</td><td>14,5 мкмоль/л — нижняя треть. Хронический дефицит при 12 годах без мяса. Восполняется через Нюпексу.</td></tr>
+    <tr><td>HbA1c / Глюкоза</td><td><b style="color:var(--green)">Отлично</b> — 5,0% и 5,05. Риска диабета нет. Результат отказа от сахара 3+ года.</td></tr>
+    <tr><td>Холестерин / ЛПНП</td><td>Пограничные (ЛПНП 3,26). Омега-3 снизит. Индекс атерогенности 2,21 — норма.</td></tr>
+    <tr><td>СРБ / АЛТ / АСТ</td><td><b style="color:var(--green)">Норма</b> — системного воспаления и поражения печени нет.</td></tr>
+    <tr><td>Антитромбин III</td><td>74,5% (норма 80–120%) — снижен. Наблюдение.</td></tr>
+  </table>
+</div></div>
+
+<!-- УЗИ -->
+<div class="lc" style="border-left:4px solid var(--teal)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--teal-bg)">
+  <div class="lt" style="color:var(--teal)">🖥 УЗИ органов (дек 2025)</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>Щитовидная железа</td><td><b style="color:var(--green)">Норма.</b> TI-RADS 1, объём 10,3 мл, узлов нет. Аутоиммунитет исключён.</td></tr>
+    <tr><td>Печень</td><td><b style="color:var(--yellow)">Гепатомегалия правой доли</b> (160 мм при норме 125). Диффузные изменения. HFE исключён. Контроль через 6 мес. Ливер Рефреш — гепатопротекция.</td></tr>
+    <tr><td>Желчный пузырь</td><td>Дисхолия (сладж), полиповидное включение 2,9 мм — вероятно холестериновый полип. Контроль УЗИ через 6 мес.</td></tr>
+    <tr><td>Поджелудочная железа</td><td>Умеренно диффузные изменения — реактивные. Ферменты (Энзимедика) назначены по этому показанию.</td></tr>
+    <tr><td>Почки</td><td>Диффузные изменения синусов, мелкие гиперэховключения. Конкрементов нет. Функция по биохимии — норма.</td></tr>
+    <tr><td>Простата</td><td><b style="color:var(--yellow)">Кальцинаты в центральной и периферической зонах</b> — хронический простатит. Объём норма (19,3 см³). ПСА 1,047 — отлично. K2 и Бобровая струя — по этому показанию.</td></tr>
+  </table>
+</div></div>
+
+<!-- ОНКОМАРКЕРЫ / ИММУНОЛОГИЯ -->
+<div class="lc" style="border-left:4px solid var(--green)">
+<div class="lc-hdr" onclick="togLC(this)" style="background:var(--green-bg)">
+  <div class="lt" style="color:var(--green)">✅ Хорошие новости — что в норме</div>
+</div>
+<div class="lc-body open">
+  <table>
+    <tr><td>ПСА / АФП</td><td>Норма. Онкологических рисков нет.</td></tr>
+    <tr><td>АТ к ТПО / ТГ / рТТГ</td><td>Норма. Аутоиммунный тиреоидит исключён.</td></tr>
+    <tr><td>H. pylori</td><td>Отрицательный. Желудок здоров.</td></tr>
+    <tr><td>IgE (аллергия)</td><td>29 МЕ/мл — норма. Истинной аллергии нет.</td></tr>
+    <tr><td>Антиспермальные АТ (кровь)</td><td>18,08 МЕ/мл — норма (&lt;55). Системного АСАТ-фактора нет.</td></tr>
+    <tr><td>Кальпротектин (кал)</td><td>&lt;30 мкг/г — норма. ВЗК (болезнь Крона, НЯК) исключены.</td></tr>
+    <tr><td>ИМТ / HbA1c / Триглицериды</td><td>25,4 / 5,0% / 0,74 — отличные показатели. Метаболического синдрома нет.</td></tr>
+  </table>
+</div></div>
+
+<!-- ИТОГ -->
+<div class="note note-info" style="margin-top:4px">
+<b>Общий вывод:</b> бесплодие функциональное, не органическое. Главные факторы — стойкая тератозооспермия (окислительный стресс + дефицит карнитина/цинка + FSHR полиморфизм) и хронический стресс с истощением надпочечниковой оси. ДНК сперматозоидов сохранна (DFI 13%). При последовательном лечении прогноз благоприятный.
+</div>
 
 </section>
 
