@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>План лечения · Михальков К.А.</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f3ef;--card:#fff;--border:#e4e1da;--text:#1a1916;--muted:#6b6860;
+  --accent:#2c5f8a;--accent-light:#e8f2fa;
+  --green:#1a7a4a;--green-bg:#edf7f2;--green-bd:#a7e3c4;
+  --orange:#c25d12;--orange-bg:#fef4ec;--orange-bd:#f9c89a;
+  --red:#b92b2b;--red-bg:#fdf1f1;--red-bd:#f5c4c4;
+  --purple:#6b3fa0;--purple-bg:#f5f0fc;--purple-bd:#d4b8f0;
+  --yellow:#8a6500;--yellow-bg:#fefce8;--yellow-bd:#fde68a;
+  --blue:#1e4a8a;--blue-bg:#eff6ff;--blue-bd:#bfdbfe;
+  --moon:#4a3a7a;--moon-bg:#f2eff9;--moon-bd:#c8b8ea;
+  --teal:#0d6e6e;--teal-bg:#f0fafa;--teal-bd:#9de0d8;
+  --r:10px;--sh:0 1px 4px rgba(0,0,0,.08);
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;padding-bottom:70px}
+
+/* HEADER */
+.hdr{background:var(--accent);color:#fff;padding:18px 16px 14px}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.hdr h1{font-size:18px;font-weight:700;line-height:1.25}
+.hdr .sub{font-size:11.5px;opacity:.75;margin-top:2px}
+.badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:3px 10px;font-size:11px;flex-shrink:0;white-space:nowrap}
+.disc{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:8px 12px;font-size:11.5px;margin-top:11px;line-height:1.45;opacity:.92}
+
+/* TABS */
+.tw{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;overflow-x:auto}
+.tabs{display:flex;padding:0 10px;list-style:none;white-space:nowrap}
+.tabs li a{display:block;padding:11px 13px 9px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;transition:color .14s,border-color .14s}
+.tabs li a:hover{color:var(--text)}
+.tabs li a.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
+
+/* MAIN */
+.main{padding:14px 13px 0;max-width:680px;margin:0 auto}
+.sec{display:none}.sec.on{display:block}
+
+/* TIME LABEL */
+.tlabel{display:flex;align-items:center;gap:8px;margin:18px 0 8px;padding:0 2px}
+.tlabel-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.tlabel-text{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tlabel-time{font-size:12px;font-weight:700;margin-left:auto;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:2px 9px}
+
+/* TBLOCK */
+.tblock{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);margin-bottom:10px}
+.tblock-hdr{display:flex;align-items:center;gap:9px;padding:11px 14px;font-weight:700;font-size:13.5px;cursor:pointer;user-select:none;border-left:4px solid transparent}
+.tblock-hdr .ico{font-size:18px;line-height:1;flex-shrink:0}
+.tblock-hdr .lbl{flex:1;line-height:1.3}
+.tblock-hdr .lbl small{font-weight:400;font-size:11.5px;display:block;margin-top:1px}
+.tblock-hdr .cnt{font-size:11px;font-weight:700;border-radius:20px;padding:2px 8px;flex-shrink:0}
+.tblock-hdr .arr{font-size:10px;opacity:.45;transition:transform .2s;flex-shrink:0}
+.tblock-hdr.open .arr{transform:rotate(180deg)}
+.tblock-body{padding:10px 13px 13px;display:none}
+.tblock-body.open{display:block}
+
+/* Color themes */
+.t-pre .tblock-hdr{background:var(--orange-bg);color:var(--orange);border-left-color:var(--orange)}
+.t-pre .tblock-hdr .cnt{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-bd)}
+.t-break .tblock-hdr{background:var(--green-bg);color:var(--green);border-left-color:var(--green)}
+.t-break .tblock-hdr .cnt{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.t-mid .tblock-hdr{background:var(--teal-bg);color:var(--teal);border-left-color:var(--teal)}
+.t-mid .tblock-hdr .cnt{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-bd)}
+.t-pre-din .tblock-hdr{background:var(--yellow-bg);color:var(--yellow);border-left-color:var(--yellow)}
+.t-pre-din .tblock-hdr .cnt{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-bd)}
+.t-din .tblock-hdr{background:var(--blue-bg);color:var(--blue);border-left-color:var(--blue)}
+.t-din .tblock-hdr .cnt{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bd)}
+.t-night .tblock-hdr{background:var(--moon-bg);color:var(--moon);border-left-color:var(--moon)}
+.t-night .tblock-hdr .cnt{background:var(--moon-bg);color:var(--moon);border:1px solid var(--moon-bd)}
+.t-iv .tblock-hdr{background:var(--red-bg);color:var(--red);border-left-color:var(--red)}
+.t-iv .tblock-hdr .cnt{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd)}
+.t-week .tblock-hdr{background:var(--purple-bg);color:var(--purple);border-left-color:var(--purple)}
+.t-week .tblock-hdr .cnt{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-bd)}
+
+/* DRUG ROW */
+.drug{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:7px}
+.drug:last-child{margin-bottom:0}
+.drug-name{font-weight:700;font-size:13.5px;margin-bottom:2px}
+.drug-dose{font-size:12.5px;color:var(--accent);font-weight:600;margin-bottom:3px}
+.drug-note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:3px}
+.drug-warn{font-size:12px;color:var(--red);margin-top:4px;line-height:1.4;padding-left:14px;position:relative}
+.drug-warn::before{content:"⚠";position:absolute;left:0}
+.tags{margin-top:5px;display:flex;flex-wrap:wrap;gap:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px}
+.tag-rx{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd)}
+.tag-add{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-bd)}
+.tag-nut{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.tag-herb{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-bd)}
+.tag-dur{background:var(--bg);color:var(--muted);border:1px solid var(--border)}
+
+/* NOTE BOX */
+.note{border-radius:8px;padding:10px 13px;font-size:12.5px;line-height:1.55;margin-bottom:10px;border-left:3px solid}
+.note-info{background:var(--accent-light);border-color:var(--accent);color:#1a3a5c}
+.note-warn{background:var(--orange-bg);border-color:var(--orange);color:#5a2a06}
+.note-danger{background:var(--red-bg);border-color:var(--red);color:#5a0a0a}
+.note-good{background:var(--green-bg);border-color:var(--green);color:#0f3a20}
+.note strong{font-weight:700}
+
+/* DRUG CARD (препараты по алфавиту) */
+.dc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
+.dc-hdr{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer}
+.dc-hdr .dn{font-weight:700;font-size:13.5px;flex:1;line-height:1.3}
+.dc-body{padding:0 14px 13px;display:none;font-size:13px}
+.dc-body.open{display:block}
+.dc-body table{width:100%;border-collapse:collapse;margin-top:6px}
+.dc-body td{padding:5px 7px;border-bottom:1px solid var(--border);vertical-align:top;font-size:12.5px}
+.dc-body tr:last-child td{border-bottom:none}
+.dc-body td:first-child{color:var(--muted);font-weight:600;width:100px;white-space:nowrap}
+
+/* ANALYSIS */
+.ag h3{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;padding:0 2px}
+.ag{margin-bottom:16px}
+.ai{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:7px;display:flex;gap:10px;align-items:flex-start}
+.ai-n{width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;color:#fff}
+.n1{background:var(--red)}.n2{background:var(--orange)}.n3{background:var(--green)}
+.ai-b .aname{font-weight:700;font-size:13px;margin-bottom:3px}
+.ai-b .ameta{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:3px}
+.ai-b .ameta span{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1px 8px;font-size:11.5px;white-space:nowrap}
+.ai-b .awhy{font-size:12px;color:#1a3a5c;line-height:1.45}
+
+/* LIFESTYLE */
+.lc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
+.lc-hdr{display:flex;align-items:center;gap:9px;padding:11px 14px;cursor:pointer}
+.lc-hdr .lt{font-weight:700;font-size:13.5px;flex:1}
+.lc-body{padding:0 14px 13px;display:none}
+.lc-body.open{display:block}
+.lc-body table{width:100%;border-collapse:collapse;margin-top:6px}
+.lc-body td{padding:5px 7px;border-bottom:1px solid var(--border);font-size:12.5px;vertical-align:top}
+.lc-body tr:last-child td{border-bottom:none}
+.lc-body td:first-child{font-weight:600;color:var(--muted);white-space:nowrap;width:120px}
+
+p{font-size:13px;line-height:1.65;margin:6px 0;color:#333}
+h2{font-size:16px;font-weight:700;margin:0 0 12px}
+
+.timeline-bar{display:flex;align-items:stretch;margin:12px 0 16px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.tb-seg{flex:1;text-align:center;padding:6px 4px 5px;font-size:10px;font-weight:700;line-height:1.3;color:#fff}
+.tb-seg small{display:block;font-weight:400;opacity:.85;font-size:9px}
+.s1{background:#c25d12}.s2{background:#1a7a4a}.s3{background:#0d6e6e}.s4{background:#8a6500}.s5{background:#1e4a8a}.s6{background:#4a3a7a}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div><h1>План лечения</h1><div class="sub">Михальков К.А. · 45 лет · апрель 2026</div></div>
+    <div class="badge">2 приёма пищи</div>
+  </div>
+  <div class="disc">⚠ Персональный план. Любые изменения — только с лечащим врачом.</div>
+</div>
+
+<div class="tw">
+  <ul class="tabs" id="tabs">
+    <li><a href="#" class="on" data-t="schedule">🕐 По времени</a></li>
+    <li><a href="#" data-t="drugs">💊 Препараты</a></li>
+    <li><a href="#" data-t="tests">🧪 Анализы</a></li>
+    <li><a href="#" data-t="lifestyle">🌿 Жизнь</a></li>
+  </ul>
+</div>
+
+<div class="main">
+
+<!-- ══════════════════ РАСПИСАНИЕ ══════════════════ -->
+<section class="sec on" id="schedule">
+
+<div class="timeline-bar">
+  <div class="tb-seg s1">9:00<small>До еды</small></div>
+  <div class="tb-seg s2">9:30–10:00<small>Завтрак</small></div>
+  <div class="tb-seg s3">12:00–13:00<small>День</small></div>
+  <div class="tb-seg s4">17:00–17:30<small>До ужина</small></div>
+  <div class="tb-seg s5">18:00<small>Ужин</small></div>
+  <div class="tb-seg s6">21:00–22:00<small>Ночь</small></div>
+</div>
+
+<!-- 9:00 — натощак -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--orange)"></div>
+  <div class="tlabel-text">Утром натощак</div>
+  <div class="tlabel-time">~9:00</div>
+</div>
+
+<div class="tblock t-pre">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">🌅</span>
+    <div class="lbl">До завтрака<small>За 30 мин до еды (≈ 9:00)</small></div>
+    <span class="cnt">4 приёма</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="note note-info" style="margin-bottom:8px">Эти препараты нужны натощак — лучше усваиваются без еды. Принять за 30 минут до завтрака.</div>
+
+    <div class="drug">
+      <div class="drug-name">Иберогаст</div>
+      <div class="drug-dose">10 капель в небольшом количестве воды</div>
+      <div class="drug-note">Стимулирует желчеотток и моторику — должен сработать до поступления еды. За 20–30 мин до завтрака.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">1 месяц</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">L-карнитин + Ацетил-L-карнитин</div>
+      <div class="drug-dose">L-карнитин 1 г + Ацетил-L-карнитин 0,5 г</div>
+      <div class="drug-note">Натощак — максимальное усвоение. Критичен при 12 годах без мяса: энергетика и подвижность сперматозоидов.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">2–3 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Ашваганда KSM-66</div>
+      <div class="drug-dose">300–600 мг</div>
+      <div class="drug-note">Утром — поддержка надпочечниковой оси в течение всего дня. Снижает кортизол, повышает тестостерон.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">2–3 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Чабрец (настой)</div>
+      <div class="drug-dose">2 ч. ложки — заварить кипятком 10–15 мин, процедить</div>
+      <div class="drug-note">1-й приём — утром за 50–60 мин до завтрака. Пить тёплым. Противогрибковое, дисбиоз, пневматоз.</div>
+      <div class="drug-warn">Готовить заранее — заварить с вечера и утром подогреть, или поставить кипятиться пока встаёте.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">24 дня</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 9:30–10:00 — завтрак -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--green)"></div>
+  <div class="tlabel-text">Завтрак</div>
+  <div class="tlabel-time">9:30 – 10:00</div>
+</div>
+
+<div class="tblock t-break">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">🍳</span>
+    <div class="lbl">Во время завтрака<small>Вместе с едой или сразу после</small></div>
+    <span class="cnt">8 приёмов</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="note note-good" style="margin-bottom:8px">Жирорастворимые витамины (D3, K2, CoQ10, Омега-3) нужны с жирной едой — яйцо, рыба, масло. Ферменты — строго во время еды.</div>
+
+    <div class="drug">
+      <div class="drug-name">Витамин D3</div>
+      <div class="drug-dose">10 000 МЕ (первый месяц), затем 4 000–5 000 МЕ</div>
+      <div class="drug-note">С жирной едой — жирорастворимый. Цель: поднять уровень с 30 до 60–70 нг/мл.</div>
+      <div class="drug-warn">Только вместе с K2 — без него при такой дозе кальций уходит не туда.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">постоянно</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Витамин K2 (MK-7)</div>
+      <div class="drug-dose">100–200 мкг</div>
+      <div class="drug-note">Обязательная пара к D3. Особенно важен при кальцинатах в простате и почках (УЗИ).</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">постоянно</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">CoQ10</div>
+      <div class="drug-dose">200 мг (утром)</div>
+      <div class="drug-note">С жирной едой. Антиоксидант для сперматозоидов — снижает фрагментацию ДНК. Суточная доза 400 мг (200+200).</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">2–3 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Омега-3 (EPA+DHA)</div>
+      <div class="drug-dose">1–1,5 г (1 капсула)</div>
+      <div class="drug-note">С едой. Мембраны сперматозоидов, снижение ЛПНП. При жирной рыбе ≥3 р/нед — достаточно 1 г.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">постоянно</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Селен</div>
+      <div class="drug-dose">100–200 мкг</div>
+      <div class="drug-note">С завтраком. Антиоксидант, морфология жгутика сперматозоида.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">2–3 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Энзимедика Дайджест Бейсик</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">Строго во время еды — ферменты работают только при контакте с пищей. 1-й приём из двух.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">1–2 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Ливер Рефреш</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">Гепатопротектор (расторопша, артишок, куркумин). 1-й приём из двух.</div>
+      <div class="drug-warn">Начинать только после результата анализа HFE-мутации (гемохроматоз).</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">2 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Хлорофилл Bio</div>
+      <div class="drug-dose">1 ст. ложка в стакане воды</div>
+      <div class="drug-note">Можно выпить во время завтрака или сразу после. Детоксикация, антиоксидант.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">1–2 мес</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 12:00 — дневное окно -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--teal)"></div>
+  <div class="tlabel-text">Дневное окно</div>
+  <div class="tlabel-time">~12:00 – 13:00</div>
+</div>
+
+<div class="tblock t-mid">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">☀️</span>
+    <div class="lbl">Хелинорм — между приёмами пищи<small>Через 2–3 ч после завтрака (≈ 12:00–13:00)</small></div>
+    <span class="cnt">1 приём</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="note note-info" style="margin-bottom:8px">При двух приёмах пищи Хелинорм лучше всего принять в промежутке — примерно через 2–3 часа после завтрака и за 3–4 часа до ужина. Пробиотики L. reuteri показывают лучшую колонизацию при приёме отдельно от других нутриентов.</div>
+    <div class="drug">
+      <div class="drug-name">Хелинорм</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">Запить небольшим количеством воды (не горячей). Курс 28 дней.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">28 дней</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 17:00-17:30 — до ужина -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--yellow)"></div>
+  <div class="tlabel-text">До ужина</div>
+  <div class="tlabel-time">17:00 – 17:30</div>
+</div>
+
+<div class="tblock t-pre-din">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">🌿</span>
+    <div class="lbl">Чабрец — 2-й приём<small>За 50–60 мин до ужина (≈ 17:00–17:30)</small></div>
+    <span class="cnt">1 приём</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="drug">
+      <div class="drug-name">Чабрец (настой)</div>
+      <div class="drug-dose">2 ч. ложки — заварить кипятком 10–15 мин, процедить</div>
+      <div class="drug-note">2-й дневной приём. За 50–60 мин до ужина. Пить тёплым. Курс 24 дня.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">24 дня</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 18:00 — ужин -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--blue)"></div>
+  <div class="tlabel-text">Ужин</div>
+  <div class="tlabel-time">~18:00</div>
+</div>
+
+<div class="tblock t-din">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">🐟</span>
+    <div class="lbl">Во время ужина<small>Вместе с едой или сразу после</small></div>
+    <span class="cnt">8 приёмов</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="drug">
+      <div class="drug-name">Энзимедика Дайджест Бейсик</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">2-й приём из двух. Строго во время ужина.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Ливер Рефреш</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">2-й приём из двух. Во время ужина.</div>
+      <div class="drug-warn">Только после результата HFE-анализа.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">CoQ10 (второй приём)</div>
+      <div class="drug-dose">200 мг</div>
+      <div class="drug-note">С жирной едой. Итого суточная доза 400 мг (200 утром + 200 вечером).</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Омега-3 (второй приём)</div>
+      <div class="drug-dose">1–1,5 г</div>
+      <div class="drug-note">С едой. Итого 2–3 г/сут суммарно.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Цинк (цитрат/пиколинат)</div>
+      <div class="drug-dose">25–30 мг</div>
+      <div class="drug-note">Вечером — не пересекается с кальцием и железом утром. При 12 годах без мяса — восполнение хронического дефицита.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">постоянно</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Метилфолат (B9) + Метилкобаламин (B12) + B6-P5P</div>
+      <div class="drug-dose">Метилфолат 400–800 мкг + B12 500–1000 мкг + B6-P5P 25–50 мг</div>
+      <div class="drug-note">Все три — за один приём вечером с едой. Снижение гомоцистеина с 16,3 мкмоль/л. Именно активные формы (метил-, P5P), не обычные.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">3+ мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Хелинорм — альтернативное время</div>
+      <div class="drug-dose">1 капсула</div>
+      <div class="drug-note">Если неудобно принимать в 12:00 — можно перенести на ужин, принять в начале еды. Это второй вариант.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">28 дней</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Пимафуцин — 1 раз в НЕДЕЛЮ</div>
+      <div class="drug-dose">2 таблетки — после ужина, 1 раз в неделю</div>
+      <div class="drug-note">Удобнее привязать к конкретному дню недели (например, каждое воскресенье). Курс 6 недель.</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">6 недель</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- НОЧЬ -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--moon)"></div>
+  <div class="tlabel-text">На ночь</div>
+  <div class="tlabel-time">21:00 – 22:00</div>
+</div>
+
+<div class="tblock t-night">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">🌙</span>
+    <div class="lbl">Перед сном<small>За 30–60 мин до сна, ≈ 21:00–22:00</small></div>
+    <span class="cnt">3 приёма</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="drug">
+      <div class="drug-name">Магний (глицинат или малат)</div>
+      <div class="drug-dose">300–400 мг</div>
+      <div class="drug-note">На ночь — расслабляет нервную систему, улучшает качество сна, поддерживает серотонин. Не вместе с цинком (ужин).</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">постоянно</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">5-HTP</div>
+      <div class="drug-dose">50–100 мг</div>
+      <div class="drug-note">На ночь. Предшественник серотонина (серотонин снижен: 44,46 нг/мл при норме &gt;50). Улучшает глубину сна.</div>
+      <div class="drug-warn">Не сочетать с антидепрессантами.</div>
+      <div class="tags"><span class="tag tag-add">Добавить к схеме</span><span class="tag tag-dur">1–2 мес</span></div>
+    </div>
+
+    <div class="drug">
+      <div class="drug-name">Бобровая струя (свечи ректальные)</div>
+      <div class="drug-dose">1 свеча ректально</div>
+      <div class="drug-note">Лёжа перед сном. Хронический простатит с кальцинатами — местное противовоспалительное действие.</div>
+      <div class="drug-warn">Начинать после получения анализов (по назначению врача).</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">20–30 дней</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- КАПЕЛЬНИЦЫ -->
+<div class="tlabel">
+  <div class="tlabel-dot" style="background:var(--red)"></div>
+  <div class="tlabel-text">2 раза в неделю (в клинике)</div>
+  <div class="tlabel-time">по записи</div>
+</div>
+
+<div class="tblock t-iv">
+  <div class="tblock-hdr" onclick="tog(this)">
+    <span class="ico">💉</span>
+    <div class="lbl">Антиоксидантная капельница<small>В/в, 2 раза в неделю, 10 сеансов</small></div>
+    <span class="cnt">⚠ после HFE</span>
+    <span class="arr">▼</span>
+  </div>
+  <div class="tblock-body">
+    <div class="note note-danger" style="margin-bottom:8px"><strong>Стоп до анализа!</strong> Начинать капельницы только после результата HFE-мутации. При гемохроматозе — аскорбиновая кислота 10 г противопоказана.</div>
+    <div class="drug">
+      <div class="drug-name">Глутатион + АЛК + Аскорбинка + физ.р-р</div>
+      <div class="drug-dose">Глутатион 1200 мг + АЛК 120 мг + Аскорб. к-та 10 г + физ.р-р 200 мл</div>
+      <div class="drug-note">В/в капельно 1 час. 2 раза в неделю, 10 раз (≈ 5 недель).</div>
+      <div class="tags"><span class="tag tag-rx">Назначен врачом</span><span class="tag tag-dur">5 недель</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Итоговая шпаргалка -->
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:13px 14px;margin-top:14px;box-shadow:var(--sh)">
+  <div style="font-weight:700;font-size:13.5px;margin-bottom:10px">📋 Шпаргалка — весь день одним взглядом</div>
+  <table style="width:100%;border-collapse:collapse;font-size:12px">
+    <tr style="background:var(--orange-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--orange);border-bottom:1px solid var(--border);white-space:nowrap">9:00</td>
+      <td style="padding:6px 8px;border-bottom:1px solid var(--border)">Иберогаст 10 кап · Карнитин · Ашваганда · Чабрец (1-й)</td>
+    </tr>
+    <tr style="background:var(--green-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--green);border-bottom:1px solid var(--border);white-space:nowrap">9:30–10:00</td>
+      <td style="padding:6px 8px;border-bottom:1px solid var(--border)">Завтрак: D3 · K2 · CoQ10 200мг · Омега-3 · Селен · Энзимедика · Ливер Рефреш · Хлорофилл</td>
+    </tr>
+    <tr style="background:var(--teal-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--teal);border-bottom:1px solid var(--border);white-space:nowrap">12:00–13:00</td>
+      <td style="padding:6px 8px;border-bottom:1px solid var(--border)">Хелинорм (между едой)</td>
+    </tr>
+    <tr style="background:var(--yellow-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--yellow);border-bottom:1px solid var(--border);white-space:nowrap">17:00–17:30</td>
+      <td style="padding:6px 8px;border-bottom:1px solid var(--border)">Чабрец (2-й) — за час до ужина</td>
+    </tr>
+    <tr style="background:var(--blue-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--blue);border-bottom:1px solid var(--border);white-space:nowrap">18:00</td>
+      <td style="padding:6px 8px;border-bottom:1px solid var(--border)">Ужин: Энзимедика · Ливер Рефреш · CoQ10 200мг · Омега-3 · Цинк · B9+B12+B6 · Пимафуцин (1 р/нед)</td>
+    </tr>
+    <tr style="background:var(--moon-bg)">
+      <td style="padding:6px 8px;font-weight:700;color:var(--moon);white-space:nowrap">21:00–22:00</td>
+      <td style="padding:6px 8px">Магний · 5-HTP · Бобровая струя (свеча)</td>
+    </tr>
+  </table>
+</div>
+
+</section>
+
+<!-- ══════════════════ ПРЕПАРАТЫ ══════════════════ -->
+<section class="sec" id="drugs">
+
+<div class="note note-info" style="margin-bottom:12px">Нажмите на карточку, чтобы раскрыть детали. <strong>Красный ярлык</strong> — назначено врачом. <strong>Оранжевый</strong> — добавить к схеме по результатам обследования.</div>
+
+<h2 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">💊 Назначены врачом</h2>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Иберогаст</div><span class="tag tag-rx">Врач · 1 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>10 капель</td></tr><tr><td>Время</td><td>9:00 — за 20–30 мин до завтрака, развести в воде</td></tr><tr><td>Зачем</td><td>Дисхолия ЖП + пневматоз кишечника</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Хелинорм</div><span class="tag tag-rx">Врач · 28 дней</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 капсула 1 р/д</td></tr><tr><td>Время</td><td>12:00–13:00 (между едой) или с ужином</td></tr><tr><td>Зачем</td><td>Пробиотик, поддержка ЖКТ</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Энзимедика Дайджест Бейсик</div><span class="tag tag-rx">Врач · 1–2 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 капс. × 2 р/д (при 2 приёмах пищи)</td></tr><tr><td>Время</td><td>Завтрак + ужин, строго во время еды</td></tr><tr><td>Зачем</td><td>Ферментная недостаточность (поджелудочная, копрограмма)</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Ливер Рефреш</div><span class="tag tag-rx">Врач · 2 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 капс. × 2 р/д</td></tr><tr><td>Время</td><td>Завтрак + ужин, с едой</td></tr><tr><td>⚠</td><td>Только после результата HFE-анализа</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Чабрец (настой)</div><span class="tag tag-rx">Врач · 24 дня</span></div>
+<div class="dc-body"><table><tr><td>Приготовление</td><td>2 ч.л., кипяток, 10–15 мин, процедить</td></tr><tr><td>Время</td><td>9:00 (за час до завтрака) + 17:00–17:30 (за час до ужина)</td></tr><tr><td>Зачем</td><td>Дисбиоз, пневматоз, противогрибковое</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Пимафуцин (Экофуцин)</div><span class="tag tag-rx">Врач · 6 нед</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>2 табл. × 1 раз в неделю</td></tr><tr><td>Время</td><td>После ужина — каждое воскресенье</td></tr><tr><td>Зачем</td><td>Дрожжевой дисбиоз</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Хлорофилл Bio</div><span class="tag tag-rx">Врач · 1–2 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 ст.л. в стакане воды</td></tr><tr><td>Время</td><td>Во время завтрака</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Бобровая струя (свечи)</div><span class="tag tag-rx">Врач · 20–30 дн</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 свеча ректально</td></tr><tr><td>Время</td><td>На ночь, лёжа</td></tr><tr><td>⚠</td><td>После получения анализов</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Антиоксидантная капельница</div><span class="tag tag-rx">Врач · 5 нед</span></div>
+<div class="dc-body"><table><tr><td>Состав</td><td>Глутатион 1200 мг + АЛК 120 мг + Аскорб. 10 г + физ.р-р</td></tr><tr><td>Режим</td><td>В/в 1 час, 2 р/нед, 10 раз</td></tr><tr><td>⚠</td><td>Только после HFE-анализа</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Витамин D3</div><span class="tag tag-rx">Врач · постоянно</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>10 000 МЕ × 1 мес → 4 000–5 000 МЕ постоянно</td></tr><tr><td>Время</td><td>Завтрак, с жирной едой</td></tr><tr><td>⚠</td><td>Только вместе с K2 MK-7</td></tr></table></div></div>
+
+<div style="height:10px"></div>
+<h2 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px">➕ Добавить к схеме</h2>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">K2 (MK-7)</div><span class="tag tag-add">Добавить · постоянно</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>100–200 мкг</td></tr><tr><td>Время</td><td>Завтрак, с D3</td></tr><tr><td>Зачем</td><td>Пара к D3. Кальцинаты простаты и почек — особенно важно.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">CoQ10</div><span class="tag tag-add">Добавить · 2–3 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>200 мг × 2 р/д = 400 мг/сут</td></tr><tr><td>Время</td><td>Завтрак + ужин, с жирной едой</td></tr><tr><td>Зачем</td><td>Антиоксидант сперматозоидов, снижение DFI. Ключевой при тератозооспермии.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">L-карнитин + Ацетил-L-карнитин</div><span class="tag tag-add">Добавить · 2–3 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>1 г + 0,5 г</td></tr><tr><td>Время</td><td>9:00 — натощак, до завтрака</td></tr><tr><td>Зачем</td><td>12 лет без мяса = дефицит карнитина. Энергетика и подвижность сперматозоидов. Есть РКИ.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Омега-3 (EPA+DHA)</div><span class="tag tag-add">Добавить · постоянно</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>2–3 г/сут (1–1,5 г × 2)</td></tr><tr><td>Время</td><td>Завтрак + ужин</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Цинк (цитрат/пиколинат)</div><span class="tag tag-add">Добавить · постоянно</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>25–30 мг 1 р/д</td></tr><tr><td>Время</td><td>Ужин (отдельно от кальция)</td></tr><tr><td>Зачем</td><td>12 лет без мяса = хронический дефицит. Морфогенез сперматозоидов.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Метилфолат + B12 (метил) + B6-P5P</div><span class="tag tag-add">Добавить · 3+ мес</span></div>
+<div class="dc-body"><table><tr><td>Метилфолат</td><td>400–800 мкг — ужин</td></tr><tr><td>B12 метил</td><td>500–1000 мкг — ужин</td></tr><tr><td>B6-P5P</td><td>25–50 мг — ужин</td></tr><tr><td>Зачем</td><td>Гомоцистеин 16,3 (норма &lt;12). Активные формы — не обычные витамины.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Ашваганда KSM-66</div><span class="tag tag-add">Добавить · 2–3 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>300–600 мг</td></tr><tr><td>Время</td><td>9:00 — натощак</td></tr><tr><td>Зачем</td><td>Андростендион критически низкий. РКИ: ↑тестостерон, ↑качество спермы.</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Магний (глицинат/малат)</div><span class="tag tag-add">Добавить · постоянно</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>300–400 мг</td></tr><tr><td>Время</td><td>На ночь (не с цинком)</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">5-HTP</div><span class="tag tag-add">Добавить · 1–2 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>50–100 мг</td></tr><tr><td>Время</td><td>На ночь</td></tr><tr><td>⚠</td><td>Не с антидепрессантами</td></tr></table></div></div>
+
+<div class="dc"><div class="dc-hdr" onclick="togDC(this)"><div class="dn">Селен</div><span class="tag tag-add">Добавить · 2–3 мес</span></div>
+<div class="dc-body"><table><tr><td>Доза</td><td>100–200 мкг</td></tr><tr><td>Время</td><td>Завтрак</td></tr></table></div></div>
+
+</section>
+
+<!-- ══════════════════ АНАЛИЗЫ ══════════════════ -->
+<section class="sec" id="tests">
+<div class="note note-info" style="margin-bottom:12px">🔴 Срочно — 1–2 недели &nbsp;|&nbsp; 🟡 Важно — в течение месяца &nbsp;|&nbsp; 🟢 Плановые — 2–3 месяца</div>
+
+<div class="ag"><h3>🔴 Срочно (1–2 недели)</h3>
+<div class="ai"><div class="ai-n n1">1</div><div class="ai-b"><div class="aname">HFE-мутации (C282Y, H63D, S65C) — гемохроматоз</div><div class="ameta"><span>Венозная кровь</span><span>2 000–3 000 ₽</span><span>5–10 дней</span></div><div class="awhy">Гепатомегалия + железо 39,9 при рационе без мяса = высокая вероятность. Определяет, можно ли делать капельницы и принимать аскорбинку.</div></div></div>
+<div class="ai"><div class="ai-n n1">2</div><div class="ai-b"><div class="aname">MTHFR полиморфизм (C677T, A1298C)</div><div class="ameta"><span>Венозная кровь</span><span>1 500–2 000 ₽</span><span>3–5 дней</span></div><div class="awhy">Гомоцистеин 16,3 при нормальном B12 и фолатах → скорее MTHFR. При мутации — нужен метилфолат, обычная фолиевая кислота не работает.</div></div></div>
+<div class="ai"><div class="ai-n n1">3</div><div class="ai-b"><div class="aname">Трансферрин + ОЖСС + % насыщения</div><div class="ameta"><span>Венозная кровь</span><span>600–900 ₽</span><span>1 день</span></div><div class="awhy">Дополнение к HFE. Насыщение &gt;45% подтверждает накопление железа ещё до генетики. Быстрый первый шаг.</div></div></div>
+<div class="ai"><div class="ai-n n1">4</div><div class="ai-b"><div class="aname">MAR-тест + АСАТ в сыворотке крови</div><div class="ameta"><span>Эякулят + кровь</span><span>2 500–4 000 ₽</span><span>1–3 дня</span></div><div class="awhy">IgA 46%, IgG 39% в марте 2025 — пограничные. Нужна динамика для выбора тактики ВРТ.</div></div></div>
+</div>
+
+<div class="ag"><h3>🟡 Важные (в течение месяца)</h3>
+<div class="ai"><div class="ai-n n2">5</div><div class="ai-b"><div class="aname">Фрагментация ДНК сперматозоидов (DFI)</div><div class="ameta"><span>Эякулят</span><span>5 000–8 000 ₽</span><span>3–5 дней</span></div><div class="awhy">При стойкой тератозооспермии — ключевой тест перед ВРТ. DFI &gt;25% → нужен ИКСИ.</div></div></div>
+<div class="ai"><div class="ai-n n2">6</div><div class="ai-b"><div class="aname">УЗИ мошонки с допплером</div><div class="ameta"><span>УЗИ</span><span>2 000–4 000 ₽</span><span>по записи</span></div><div class="awhy">Исключить субклиническое варикоцеле — частая причина тератозооспермии. Пока не делалось.</div></div></div>
+<div class="ai"><div class="ai-n n2">7</div><div class="ai-b"><div class="aname">Анализ кишечного микробиома / посев на дисбиоз</div><div class="ameta"><span>Кал</span><span>3 000–6 000 ₽</span><span>7–14 дней</span></div><div class="awhy">Пневматоз + дисхолия + ImmunoHealth-реакция на кандиду — уточнить характер дисбиоза.</div></div></div>
+</div>
+
+<div class="ag"><h3>🟢 Плановые (2–3 месяца)</h3>
+<div class="ai"><div class="ai-n n3">8</div><div class="ai-b"><div class="aname">Контроль витамина D (25-OH)</div><div class="ameta"><span>Кровь</span><span>600–900 ₽</span><span>1 день</span></div><div class="awhy">Через 2–3 мес после D3 10 000 МЕ. Цель: 60–70 нг/мл.</div></div></div>
+<div class="ai"><div class="ai-n n3">9</div><div class="ai-b"><div class="aname">Контроль гомоцистеина</div><div class="ameta"><span>Кровь</span><span>700–1 000 ₽</span><span>1 день</span></div><div class="awhy">После 2–3 мес B-витаминной терапии. Цель: &lt;10 мкмоль/л.</div></div></div>
+<div class="ai"><div class="ai-n n3">10</div><div class="ai-b"><div class="aname">Контроль ТТГ</div><div class="ameta"><span>Кровь</span><span>300–500 ₽</span><span>1 день</span></div><div class="awhy">ТТГ снизился с 4,2 до 3,19. Оптимум 1,5–2,5. Контроль через 3 мес.</div></div></div>
+<div class="ai"><div class="ai-n n3">11</div><div class="ai-b"><div class="aname">Повторная спермограмма</div><div class="ameta"><span>Эякулят</span><span>2 000–4 000 ₽</span><span>1–2 дня</span></div><div class="awhy">Через 3–4 мес — один цикл сперматогенеза. Главный контроль эффективности лечения.</div></div></div>
+<div class="ai"><div class="ai-n n3">12</div><div class="ai-b"><div class="aname">Стероидный профиль (слюна) — повтор</div><div class="ameta"><span>Слюна</span><span>4 000–6 000 ₽</span><span>5–7 дней</span></div><div class="awhy">Через 3 мес. Оценить динамику андростендиона и тестостерона на фоне ашваганды.</div></div></div>
+</div>
+</section>
+
+<!-- ══════════════════ ОБРАЗ ЖИЗНИ ══════════════════ -->
+<section class="sec" id="lifestyle">
+
+<div class="note note-good" style="margin-bottom:12px"><strong>Уже делаете правильно:</strong> рыбно-растительный рацион, отказ от сахара и крахмала 3+ года, молочные продукты и яйца в рационе. HbA1c 5,0%, триглицериды 0,74 — отличные показатели.</div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">🌡 Температурный режим — критично</div></div>
+<div class="lc-body open"><table>
+<tr><td>Душ</td><td>Только тёплый ≤38°C. Горячую ванну исключить.</td></tr>
+<tr><td>Ноутбук</td><td>Только на столе. Не на коленях никогда.</td></tr>
+<tr><td>Бельё</td><td>Свободное, хлопок. Плотное синтетическое — нет.</td></tr>
+<tr><td>Баня/сауна</td><td>Минимизировать на весь период лечения.</td></tr>
+</table></div></div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">😴 Сон — приоритет №1</div></div>
+<div class="lc-body open"><p>Тестостерон вырабатывается преимущественно ночью. Надпочечниковая ось истощена (андростендион критически снижен). Сон — главное лекарство.</p>
+<table>
+<tr><td>Длительность</td><td>Минимум 7,5–8 часов</td></tr>
+<tr><td>Отбой</td><td>До 23:00</td></tr>
+<tr><td>Режим</td><td>Одинаковое время, включая выходные</td></tr>
+</table></div></div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">🏃 Физическая активность</div></div>
+<div class="lc-body"><table>
+<tr><td>Рекомендовано</td><td>Умеренная аэробная нагрузка 30–45 мин/день: ходьба, плавание, велосипед</td></tr>
+<tr><td>Ограничить</td><td>Силовые до изнеможения — поднимают кортизол (ось и без того истощена)</td></tr>
+</table></div></div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">🧘 Стресс — медицинская необходимость снизить</div></div>
+<div class="lc-body"><p>Стероидный профиль (ДНКОМ, янв 2026) прямо показывает: хронический стресс биохимически подавляет сперматогенез через феномен «прегненолон-стил».</p>
+<table>
+<tr><td>Медитация</td><td>10–15 мин ежедневно (Insight Timer, Headspace)</td></tr>
+<tr><td>Выходной</td><td>Хотя бы 1 день/нед без рабочих коммуникаций</td></tr>
+<tr><td>Психотерапия</td><td>Рассмотреть при возможности</td></tr>
+</table></div></div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">🐟 Питание — нюансы</div></div>
+<div class="lc-body"><table>
+<tr><td>Жирная рыба</td><td>Лосось, скумбрия, сардины — ≥3 раз в неделю (омега-3, D, B12)</td></tr>
+<tr><td>Устрицы/мидии</td><td>Включить при возможности — богаты цинком</td></tr>
+<tr><td>Яйца</td><td>2–3 в день — холин, B12, D, качественный белок</td></tr>
+<tr><td>Продолжать</td><td>Отказ от сахара и крахмала — отличная основа</td></tr>
+</table></div></div>
+
+<div class="lc"><div class="lc-hdr" onclick="togLC(this)"><div class="lt">🍷 Алкоголь</div></div>
+<div class="lc-body"><table>
+<tr><td>Максимум</td><td>1–2 бокала вина в неделю, не чаще</td></tr>
+<tr><td>Исключить</td><td>Крепкое, пиво (дрожжи + фитоэстрогены)</td></tr>
+</table></div></div>
+
+</section>
+
+</div><!-- /main -->
+
+<script>
+document.getElementById('tabs').addEventListener('click',function(e){
+  const a=e.target.closest('a[data-t]');if(!a)return;e.preventDefault();
+  document.querySelectorAll('.tabs a').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.sec').forEach(x=>x.classList.remove('on'));
+  a.classList.add('on');document.getElementById(a.dataset.t).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+function tog(hdr){
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}
+function togDC(hdr){hdr.nextElementSibling.classList.toggle('open');}
+function togLC(hdr){hdr.nextElementSibling.classList.toggle('open');}
+// Открыть первый блок по умолчанию
+document.addEventListener('DOMContentLoaded',function(){
+  const f=document.querySelector('.tblock-hdr');if(f)tog(f);
+  document.querySelectorAll('.lc-body.open').forEach(b=>{});
+});
+</script>
+</body>
+</html>

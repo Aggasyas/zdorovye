@@ -1,0 +1,263 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mikhalkov Health//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:🏥 Здоровье — Лечение
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19701025T030000
+TZOFFSETFROM:+0400
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:BAFD59C8-7B57-46BD-95A6-E1F73022A69E
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T090000
+DTEND;TZID=Europe/Moscow:20260416T091500
+SUMMARY:💊 9:00 — Натощак (до завтрака)
+DESCRIPTION:За 30 мин до завтрака:\n• Иберогаст 1
+ 0 кап в воде (врач 1)\n• Ашваганда KSM-66 300-600 
+ мг\n• Чабрец настой 1-й (2 ч.л. кипяток 15 ми
+ н) — первые 24 дня
+RRULE:FREQ=DAILY;UNTIL=20260715T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:💊 9:00 — Натощак (до завтрака)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:AED5128E-4A26-4E65-A95D-4827706E2D22
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T093000
+DTEND;TZID=Europe/Moscow:20260416T094500
+SUMMARY:🍳 9:30 — Завтрак (с жирной едой)
+DESCRIPTION:С едой (яйцо\, рыба\, масло):\n• Нюпек
+ са 1 саше (андролог)\n• Корпатон Би Форте 1
+  капс (андролог)\n• N-ацетилцистеин 600 мг (
+ андролог)\n• Никотинамид рибозид 600 мг (а
+ ндролог)\n• Витамин D3 10000 МЕ (через месяц -
+ > 5000 МЕ)\n• K2 MK-7 100-200 мкг (ОБЯЗАТЕЛЬНО с D3!)\n
+ • Омега-3 1-1.5 г\n• Хлорофилл Bio 1 ст.л. в вод
+ е\n• Энзимедика Дайджест Бейсик 1 капс\n•
+  Ливер Рефреш 1 капс
+RRULE:FREQ=DAILY;UNTIL=20260715T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:🍳 9:30 — Завтрак (с жирной едой)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9AD0FC66-2C09-4581-86F4-7E738494C2F4
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T120000
+DTEND;TZID=Europe/Moscow:20260416T120500
+SUMMARY:🦠 12:00 — Хелинорм (между едой)
+DESCRIPTION:Хелинорм 1 капс — между завтраком 
+ и ужином.\nКурс 28 дней.
+RRULE:FREQ=DAILY;UNTIL=20260514T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:🦠 12:00 — Хелинорм (между едой)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8F9E01E0-AB73-43C7-A387-9BE89DC444C0
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T170000
+DTEND;TZID=Europe/Moscow:20260416T171000
+SUMMARY:🌿 17:00 — Чабрец (2-й приём, до ужина)
+DESCRIPTION:Чабрец настой 2-й: 2 ч.л. кипяток 15 ми
+ н.\nЗа 50-60 мин до ужина. Курс 24 дня.
+RRULE:FREQ=DAILY;UNTIL=20260510T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:🌿 17:00 — Чабрец (2-й приём, до ужина)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6915283A-6DBA-40C6-A374-B071F3A1A648
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T180000
+DTEND;TZID=Europe/Moscow:20260416T181500
+SUMMARY:🐟 18:00 — Ужин (с едой)
+DESCRIPTION:Во время ужина:\n• Энзимедика Дайд
+ жест Бейсик 1 капс\n• Ливер Рефреш 1 капс\n
+ • Омега-3 1-1.5 г\n• Jarrow Methyl B12 + Метилфолат 1 
+ табл (MTHFR C677T!)
+RRULE:FREQ=DAILY;UNTIL=20260715T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:🐟 18:00 — Ужин (с едой)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:594FFE8E-2ACF-480B-BF04-5DF9F1ED7FE1
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260416T210000
+DTEND;TZID=Europe/Moscow:20260416T211500
+SUMMARY:🌙 21:00 — На ночь (до укола)
+DESCRIPTION:Перед сном:\n• Магний глицинат/мал
+ ат 300-400 мг\n• 5-HTP 50 мг\n• Бобровая струя св
+ еча ректально
+RRULE:FREQ=DAILY;UNTIL=20260715T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:🌙 21:00 — На ночь (до укола)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6BD1A5B1-B93C-4EBC-932B-D78BCDEEA54E
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260417T213000
+DTEND;TZID=Europe/Moscow:20260417T214500
+SUMMARY:💉 21:30 — Пурегон 75 МЕ (укол п/к живот)
+DESCRIPTION:Пурегон 75 МЕ подкожно в живот / Пур
+ егон-пен.\nКаждый 3-й день. Осталось 10 укол
+ ов из 12.\nГрафик: 17/20/23/26/29 апр — 02/05/08/11/14 ма
+ я\nПосле 14.05 — спермограмма на следующий 
+ день!
+RRULE:FREQ=DAILY;INTERVAL=3;UNTIL=20260515T000000Z
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:💉 21:30 — Пурегон 75 МЕ (укол п/к живо
+ т)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:91348F7C-B1F5-4093-9D30-DE387CBEF088
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260419T190000
+DTEND;TZID=Europe/Moscow:20260419T191000
+SUMMARY:💊 19:00 — Пимафуцин 2 таб. (каждое воск
+ ресенье)
+DESCRIPTION:Пимафуцин 2 таблетки после ужина.\n1
+  раз в неделю. Курс 6 недель.
+RRULE:FREQ=WEEKLY;BYDAY=SU;COUNT=6
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:💊 19:00 — Пимафуцин 2 таб. (каждое во
+ скресенье)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5EC85F24-CAB9-43CA-BC28-66343B491011
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260420T110000
+DTEND;TZID=Europe/Moscow:20260420T123000
+SUMMARY:💉 11:00 — Капельница (Врач 1): Глутатио
+ н+АЛК+Аскорбинка
+DESCRIPTION:Глутатион 1200мг + АЛК 120мг + Аскорбин
+ ка 10г + физ.р-р 200мл.\nВ/в 1 час. 2 раза в неде
+ лю (пн+чт). 10 сеансов.
+RRULE:FREQ=WEEKLY;BYDAY=MO,TH;COUNT=10
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:💉 11:00 — Капельница (Врач 1): Глутат
+ ион+АЛК+Аскорбинка
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:64D640D0-E782-4C54-8528-49FD56B7F308
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260526T110000
+DTEND;TZID=Europe/Moscow:20260526T130000
+SUMMARY:💉 11:00 — Капельница (Андролог): Глуто
+ ксим+Цитофлавин
+DESCRIPTION:ВТОРОЙ курс (начать после завершен
+ ия первого):\n1. Глутоксим 10мг/мл — 6мл на Na
+ Cl 200мл\n2. Цитофлавин 10мл на NaCl 200мл\nПоочер
+ ёдно. 2 раза в неделю (вт+пт). 8 сеансов.\nКл
+ иника Я Здорова: +7(495)565-30-44
+RRULE:FREQ=WEEKLY;BYDAY=TU,FR;COUNT=8
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:💉 11:00 — Капельница (Андролог): Глу
+ токсим+Цитофлавин
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:F6750093-BF59-4139-AEE7-38C35D77D865
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260515T100000
+DTEND;TZID=Europe/Moscow:20260515T103000
+SUMMARY:⚠️ СПЕРМОГРАММА — сразу после посл
+ еднего Пурегона
+DESCRIPTION:Последний укол Пурегона — 14.05.\nСпе
+ рмограмму сдать 15.05 или 16.05.\nОценить морф
+ ологию / подвижность / концентрацию.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:⚠️ СПЕРМОГРАММА — сразу после по
+ следнего Пурегона
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:35840CF3-CC63-45F9-B0F6-1F57BC5A6E12
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260518T090000
+DTEND;TZID=Europe/Moscow:20260518T093000
+SUMMARY:📊 Контроль: Витамин D (через 1 месяц)
+DESCRIPTION:Сдать 25-OH витамин D.\nЦель: 60-70 нг/мл. 
+ Исходный: 30 нг/мл.\nЕсли достигнут — пере
+ йти с D3 10000 на 5000 МЕ/сут.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:📊 Контроль: Витамин D (через 1 меся
+ ц)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2777667A-1C63-4A1F-AF96-790B9C195AB5
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260616T090000
+DTEND;TZID=Europe/Moscow:20260616T093000
+SUMMARY:📊 Контроль: Гомоцистеин + ТТГ (2 меся
+ ца)
+DESCRIPTION:Сдать:\n• Гомоцистеин (исх. 16.3 — це
+ ль <10 мкмоль/л)\n• ТТГ (исх. 3.19 — оптимум 1.5
+ -2.5 мкМЕ/мл)
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:📊 Контроль: Гомоцистеин + ТТГ (2 ме
+ сяца)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:B76EDEA5-3AA0-47F2-85D5-3501229E4082
+DTSTAMP:20260416T151234
+DTSTART;TZID=Europe/Moscow:20260716T090000
+DTEND;TZID=Europe/Moscow:20260716T103000
+SUMMARY:📊 ГЛАВНЫЙ КОНТРОЛЬ (3 месяца): Спермо
+ грамма + все анализы
+DESCRIPTION:1. Спермограмма — цель: нормальные 
+ формы >3-4%\n   Исходная: 1-2% (весь 2025-2026)\n2. ТТ
+ Г — цель 1.5-2.5 мкМЕ/мл\n3. Стероидный профи
+ ль слюны (андростендион / тестостерон)\n4. 
+ Витамин D 25-OH — цель 60-70 нг/мл\n5. Гомоцисте
+ ин — цель <10 мкмоль/л
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:📊 ГЛАВНЫЙ КОНТРОЛЬ (3 месяца): Спер
+ мограмма + все анализы
+END:VALARM
+END:VEVENT
+END:VCALENDAR
