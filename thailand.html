@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Таиланд 9–19 июня 2026</title>
+<style>
+  :root {
+    --teal:     #01696F;
+    --teal-lt:  #E6F2F2;
+    --teal-dk:  #1B3A3C;
+    --orange:   #C86400;
+    --orange-lt:#FEF3E7;
+    --warn:     #964219;
+    --warn-lt:  #FDF0E8;
+    --gold:     #8B6914;
+    --gold-lt:  #FEF9E7;
+    --text:     #28251D;
+    --muted:    #6B6860;
+    --border:   #D4D1CA;
+    --bg:       #F7F6F2;
+    --white:    #FFFFFF;
+    --green:    #2E7D32;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding-bottom: 40px;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--teal-dk);
+    color: #fff;
+    padding: 20px 16px 16px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .site-header h1 { font-size: 1.15rem; font-weight: 700; }
+  .site-header p  { font-size: 0.78rem; opacity: .7; margin-top: 2px; }
+
+  /* ── Nav tabs ── */
+  .nav-scroll {
+    display: flex; overflow-x: auto; gap: 6px;
+    padding: 10px 16px; background: var(--teal-dk);
+    border-top: 1px solid rgba(255,255,255,.15);
+    scrollbar-width: none;
+  }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    background: rgba(255,255,255,.15);
+    color: #fff; border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.8rem; cursor: pointer;
+    text-decoration: none; white-space: nowrap;
+  }
+  .nav-btn:active { background: rgba(255,255,255,.35); }
+
+  /* ── Content wrapper ── */
+  .container { padding: 0 14px; max-width: 680px; margin: 0 auto; }
+
+  /* ── Section banner ── */
+  .section-banner {
+    margin: 18px -14px 14px;
+    padding: 12px 20px;
+    background: var(--teal-dk);
+    color: #fff;
+    font-size: 1rem; font-weight: 700;
+  }
+
+  /* ── Day header ── */
+  .day-header {
+    display: flex; gap: 10px; align-items: flex-start;
+    background: var(--teal); color: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 14px 0 8px;
+  }
+  .day-date { font-size: 0.75rem; font-weight: 700; opacity: .85; min-width: 64px; margin-top: 2px; }
+  .day-title { font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+
+  /* ── Info box ── */
+  .info-box {
+    background: var(--teal-lt);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin: 6px 0;
+    font-size: 0.88rem;
+  }
+  .info-box.orange { background: var(--orange-lt); border-color: var(--orange); }
+  .info-box.warn   { background: var(--warn-lt);   border-color: var(--warn); color: var(--warn); }
+  .info-box.gold   { background: var(--gold-lt);   border-color: var(--gold); }
+  .info-box .row   { display: flex; gap: 6px; margin-bottom: 3px; flex-wrap: wrap; }
+  .info-box .row:last-child { margin-bottom: 0; }
+  .info-box .lbl   { font-weight: 700; white-space: nowrap; }
+  .info-box .val   { color: var(--text); }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin: 10px 0;
+  }
+  .card-title {
+    font-size: 0.97rem; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card-meta {
+    font-size: 0.8rem; color: var(--muted);
+    margin-bottom: 8px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 3px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem; font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-teal   { background: var(--teal-lt);   color: var(--teal); }
+  .badge-orange { background: var(--orange-lt); color: var(--orange); }
+  .badge-green  { background: #E8F5E9;          color: var(--green); }
+  .badge-warn   { background: var(--warn-lt);   color: var(--warn); }
+
+  /* ── Link rows ── */
+  .link-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem; text-decoration: none; color: var(--text);
+  }
+  .link-row:last-child { border-bottom: none; }
+  .link-row .icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .icon-map   { background: #E8F0FE; }
+  .icon-tel   { background: #E8F5E9; }
+  .icon-web   { background: var(--teal-lt); }
+  .icon-time  { background: #FFF8E1; }
+  .icon-money { background: var(--gold-lt); }
+  .link-row .ltext { flex: 1; }
+  .link-row .ltext small { display: block; color: var(--muted); font-size: 0.78rem; }
+  .chevron { color: var(--border); font-size: 0.9rem; }
+
+  /* ── Dish list ── */
+  .dish-list { margin: 8px 0 4px; padding: 0; list-style: none; }
+  .dish-list li {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #F0EDE8;
+  }
+  .dish-list li:last-child { border-bottom: none; }
+  .dish-list li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--teal); font-size: 0.75rem;
+    top: 5px;
+  }
+  .dish-list li strong { color: var(--teal-dk); }
+
+  /* ── Price table ── */
+  .price-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin: 8px 0; }
+  .price-table th {
+    background: var(--teal); color: #fff;
+    padding: 6px 8px; text-align: left; font-weight: 600;
+  }
+  .price-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); }
+  .price-table tr:nth-child(even) td { background: var(--teal-lt); }
+  .price-table .price-col { text-align: right; font-weight: 600; color: var(--teal-dk); }
+
+  /* ── Schedule table ── */
+  .sched-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 6px 0; }
+  .sched-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .sched-table tr:nth-child(even) td { background: #FAFAF8; }
+  .sched-table .time-col { font-weight: 700; color: var(--teal); white-space: nowrap; width: 52px; }
+
+  /* ── Phrase box ── */
+  .phrase-box {
+    background: var(--gold-lt);
+    border: 1px solid #D4B836;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    font-size: 0.88rem;
+  }
+  .phrase-box .phrase-main {
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--teal-dk); margin-bottom: 6px;
+  }
+  .phrase-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .phrase-table td { padding: 4px 6px; border-bottom: 1px solid rgba(0,0,0,.06); }
+  .phrase-table td:first-child { color: var(--muted); width: 38%; }
+  .phrase-table td:nth-child(2) { font-weight: 600; color: var(--teal-dk); }
+  .phrase-table td:nth-child(3) { color: #8B4513; font-style: italic; }
+
+  /* ── Warn box ── */
+  .warn-box {
+    background: var(--warn-lt);
+    border-left: 4px solid var(--warn);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 0.87rem;
+    color: var(--warn);
+    font-weight: 600;
+  }
+  .warn-box b { color: #5C2A0E; }
+
+  /* ── Note ── */
+  .note {
+    font-size: 0.82rem; color: var(--muted);
+    font-style: italic; margin: 4px 0 8px;
+    padding-left: 10px;
+    border-left: 2px solid var(--border);
+  }
+
+  /* ── Section subtitle ── */
+  .sec-sub {
+    font-size: 0.92rem; font-weight: 700;
+    color: var(--teal-dk);
+    margin: 16px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--teal-lt);
+  }
+
+  /* ── Booking pill ── */
+  .booking-row {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0;
+  }
+  .booking-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--teal-lt); color: var(--teal-dk);
+    border-radius: 20px; padding: 3px 10px;
+    font-size: 0.78rem; font-weight: 600;
+  }
+
+  /* ── Scroll anchor ── */
+  .anchor { scroll-margin-top: 100px; }
+
+  /* ── Separator ── */
+  .sep { height: 1px; background: var(--border); margin: 6px 0; }
+
+  a { color: inherit; }
+  a.ext { color: var(--teal); text-decoration: underline; font-size: 0.83rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>🇹🇭 Таиланд 9–19 июня 2026</h1>
+  <p>Mikhalkov Konstantin + Charkina Kseniia · Бронь Аэрофлот: BPNXZW</p>
+</header>
+
+<nav class="nav-scroll">
+  <a class="nav-btn" href="#hotels">🏨 Отели</a>
+  <a class="nav-btn" href="#route">📅 Маршрут</a>
+  <a class="nav-btn" href="#bkk-food">🍽 Бангкок</a>
+  <a class="nav-btn" href="#chaweng-food">🏖 Чавенг</a>
+  <a class="nav-btn" href="#choengmon-food">🌴 Чоенг Мон</a>
+  <a class="nav-btn" href="#khanom-food">🐬 Кханом</a>
+  <a class="nav-btn" href="#huahin-food">🦀 Хуа Хин</a>
+  <a class="nav-btn" href="#phrases">🗣 Фразы</a>
+  <a class="nav-btn" href="#money">💱 Деньги</a>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════ ОТЕЛИ -->
+<div id="hotels" class="anchor">
+  <div class="section-banner">🏨 Все отели сводно</div>
+
+  <!-- Chatrium -->
+  <div class="card">
+    <div class="card-title">Chatrium Riverside Bangkok</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">9–10 июня</span>
+      <span class="badge badge-orange">9.3/10 Trip.com</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-pill">Trip.com №1539364761670023</span>
+      <span class="booking-pill">Код: CHRB85465</span>
+    </div>
+    <div class="info-box" style="margin-top:8px">
+      <div class="row"><span class="lbl">Чек-ин:</span><span class="val">с 15:00</span></div>
+      <div class="row"><span class="lbl">Чек-аут:</span><span class="val">06:00–12:00 (ранний!)</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Chatrium+Hotel+Riverside+Bangkok+28+Charoen+Krung" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">28 Charoen Krung Rd, Bang Kho Laem<small>Открыть в Google Maps</small></div>
+      <span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6623078888">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 307 8888<small>Позвонить</small></div>
+      <span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- Anavana -->
+  <div class="card">
+    <div class="card-title">Anavana Beach Resort</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">10–12 июня · Чавенг</span>
+      <span class="badge badge-orange">4.8★ TripAdvisor</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-pill">Trip.com №1539364761670023</span>
+    </div>
+    <div class="info-box" style="margin-top:8px">
+      <div class="row"><span class="lbl">Чек-ин:</span><span class="val">с 15:00</span></div>
+      <div class="row"><span class="lbl">Чек-аут:</span><span class="val">12 июня до 12:00</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Anavana+Beach+Resort+Chaweng+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Chaweng Beach, Koh Samui<small>Открыть в Google Maps</small></div>
+      <span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- SALA -->
+  <div class="card">
+    <div class="card-title">SALA Samui Choengmon Beach Resort</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">12–17 июня · Чоенг Мон</span>
+      <span class="badge badge-orange">9.4 Booking</span>
+      <span class="badge badge-green">★★ Michelin Keys</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-pill">№7907699 (прямое)</span>
+    </div>
+    <div class="info-box" style="margin-top:8px">
+      <div class="row"><span class="lbl">Чек-ин:</span><span class="val">14:00</span></div>
+      <div class="row"><span class="lbl">Чек-аут:</span><span class="val">17 июня до 12:00 (паром в 15:00!)</span></div>
+      <div class="row"><span class="lbl">⭐ При заселении:</span><span class="val">сразу бронировать 3 спа-процедуры!</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=SALA+Samui+Choengmon+Beach+Resort+10+Moo+5+Baan+Plai+Laem" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">10/9 Moo 5, Baan Plai Laem, Bo Phut<small>Открыть в Google Maps</small></div>
+      <span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6677905888">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 77 905 888 · Спа: LINE @salachoengmon<small>Позвонить</small></div>
+      <span class="chevron">›</span>
+    </a>
+    <div class="info-box" style="margin-top:6px">
+      <div class="row"><span class="lbl">Спа 13 июня 16:00:</span><span class="val">Body Scrub 30' + Massage 90'</span></div>
+      <div class="row"><span class="lbl">Спа 14 июня 16:00:</span><span class="val">Swedish 60' + Herbal Facial 60'</span></div>
+      <div class="row"><span class="lbl">Спа 16 июня 15:00:</span><span class="val">Aroma Massage 90'</span></div>
+    </div>
+  </div>
+
+  <!-- Aava -->
+  <div class="card">
+    <div class="card-title">Aava Resort &amp; Spa</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">17–18 июня · Кханом</span>
+      <span class="badge badge-orange">9.1 Agoda</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-pill">Trip.com №1539364881252946</span>
+      <span class="booking-pill">Код: 1539364881259891</span>
+    </div>
+    <div class="info-box" style="margin-top:8px">
+      <div class="row"><span class="lbl">Чек-ин:</span><span class="val">после 14:30</span></div>
+      <div class="row"><span class="lbl">Чек-аут:</span><span class="val">18 июня до 12:00</span></div>
+      <div class="row"><span class="lbl">⭐ При заселении:</span><span class="val">заказать тур на дельфинов 07:30 18 июня!</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Aava+Resort+Spa+28/3+Nadan+Beach+Road+Khanom" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">28/3 Nadan Beach Road, Khanom 80210<small>Открыть в Google Maps</small></div>
+      <span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6675300310">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 75 300 310<small>Позвонить</small></div>
+      <span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- Sukhothai -->
+  <div class="card">
+    <div class="card-title">The Sukhothai Bangkok</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">18–19 июня · Бангкок</span>
+      <span class="badge badge-orange">9.4 Booking</span>
+      <span class="badge badge-green">★★ Michelin Keys</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-pill">Trip.com №1539364881273686</span>
+      <span class="booking-pill">Код: 12042076</span>
+    </div>
+    <div class="info-box" style="margin-top:8px">
+      <div class="row"><span class="lbl">Чек-ин:</span><span class="val">после 14:00</span></div>
+      <div class="row"><span class="lbl">Чек-аут:</span><span class="val">19 июня до 12:00 (вылет в 13:20!)</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=The+Sukhothai+Bangkok+13+South+Sathorn+Road" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">13/3 Sathon Rd, Thung Maha Mek, Sathon<small>Открыть в Google Maps</small></div>
+      <span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6623448888">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 344 8888<small>Позвонить</small></div>
+      <span class="chevron">›</span>
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ МАРШРУТ -->
+<div id="route" class="anchor">
+  <div class="section-banner">📅 Маршрут по дням</div>
+
+  <!-- 8 июня -->
+  <div class="day-header">
+    <div class="day-date">8 июня (пн)</div>
+    <div class="day-title">Вылет из Москвы</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">22:25</td><td>✈ <strong>SU272</strong> Москва SVO → Бангкок BKK</td></tr>
+    </table>
+    <div class="info-box" style="margin-top:6px">
+      <div class="row"><span class="lbl">Рейс:</span><span class="val">SU272</span></div>
+      <div class="row"><span class="lbl">Бронь Аэрофлот:</span><span class="val">BPNXZW</span></div>
+    </div>
+  </div>
+
+  <!-- 9 июня -->
+  <div class="day-header">
+    <div class="day-date">9 июня (вт)</div>
+    <div class="day-title">Прилёт · Бангкок · Chatrium</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">11:45</td><td>Посадка в Суварнабхуми (BKK)</td></tr>
+      <tr><td class="time-col">13:00</td><td>Паспортный контроль + стойка аренды авто (уровень Б)</td></tr>
+      <tr><td class="time-col">15:00</td><td>Чек-ин Chatrium Riverside Bangkok</td></tr>
+    </table>
+    <div class="warn-box" style="margin-top:8px">⚠ Рейс прилетает в <b>BKK Suvarnabhumi</b>, авто Localrent получать в <b>DMK Донмыанг</b> — разные аэропорты! Уточнить у прокатчика (WhatsApp уже отправлен). Ваучер №1857403, MG 5 автомат.</div>
+    <a class="link-row" href="https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Аэропорт Суварнабхуми (BKK)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="https://maps.google.com/?q=Don+Mueang+International+Airport+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Аэропорт Донмыанг (DMK) — получение авто<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 10 июня -->
+  <div class="day-header">
+    <div class="day-date">10 июня (ср)</div>
+    <div class="day-title">Бангкок → Дон Сак → Самуи</div>
+  </div>
+  <div class="warn-box">⚠ <b>Выезд строго в 06:30!</b> До 07:30 пробок нет — потом встанете.</div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">05:45</td><td>Завтрак в Chatrium</td></tr>
+      <tr><td class="time-col">06:30</td><td><strong>Выезд</strong> — Rama II Rd → Highway 4 на юг. Навигатор: Waze</td></tr>
+      <tr><td class="time-col">~10:30</td><td>Обед в Прачуап Кхири Кхан, набережная (~45 мин)</td></tr>
+      <tr><td class="time-col"><strong>17:00</strong></td><td>🚢 Паром Seatran Ferry, пирс Дон Сак → Натхон. Билет №202601687152 — стойка Prepaid Ticket за 30 мин</td></tr>
+      <tr><td class="time-col">18:30</td><td>Прибытие Натхон, Самуи</td></tr>
+      <tr><td class="time-col">~19:30</td><td>Чек-ин Anavana Beach Resort</td></tr>
+    </table>
+    <a class="link-row" href="https://maps.google.com/?q=Seatran+Ferry+Pier+Don+Sak+Surat+Thani+17+Moo+8+Donsak" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Пирс Дон Сак — Seatran Ferry<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 11 июня -->
+  <div class="day-header">
+    <div class="day-date">11 июня (чт)</div>
+    <div class="day-title">Самуи · Чавенг · Отдых</div>
+  </div>
+  <div class="card">
+    <ul class="dish-list">
+      <li>Купание: лучшее до 09:30 и после 15:00</li>
+      <li>Big Buddha (Wat Phra Yai) — 20 мин на машине</li>
+      <li>Ужин: Dara Serene или Andaman Thai — <a href="#chaweng-food" class="ext">подробнее ↓</a></li>
+    </ul>
+    <a class="link-row" href="https://maps.google.com/?q=Big+Buddha+Koh+Samui+Wat+Phra+Yai" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Big Buddha (Wat Phra Yai)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 12 июня -->
+  <div class="day-header">
+    <div class="day-date">12 июня (пт)</div>
+    <div class="day-title">Ang Thong Marine Park → SALA</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">08:00</td><td>🏝 Экскурсия Ang Thong Marine Park — 42 острова, каяк, снорклинг. ~€71–101/чел</td></tr>
+      <tr><td class="time-col">~16:00</td><td>Возврат с экскурсии</td></tr>
+      <tr><td class="time-col">14:00+</td><td>Чек-ин SALA Samui Choengmon</td></tr>
+    </table>
+    <div class="info-box" style="margin-top:6px">
+      <div class="row"><span class="lbl">⭐</span><span class="val">При заселении: сразу бронировать 3 спа-процедуры! Тел. +66 77 905 888</span></div>
+      <div class="row"><span class="lbl">⚠</span><span class="val">Зависит от погоды — уточнять накануне</span></div>
+    </div>
+    <a class="link-row" href="https://angthongmarinepark.com" target="_blank">
+      <div class="icon icon-web">🌐</div>
+      <div class="ltext">angthongmarinepark.com — бронирование<small>Экскурсия</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 13–16 июня -->
+  <div class="day-header">
+    <div class="day-date">13–16 июня</div>
+    <div class="day-title">SALA Samui Choengmon — 5 ночей</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">13 июня</td><td>🎪 <strong>Fisherman's Village Walking Street</strong> — Бопхут, с 17:00 каждую субботу. Уличная еда, ремёсла.</td></tr>
+      <tr><td class="time-col">13 июня</td><td>💆 Спа 16:00: Body Scrub 30' + Massage 90'</td></tr>
+      <tr><td class="time-col">14 июня</td><td>🤿 Ко Тао (опционально) — катер 1.5ч, снорклинг, черепахи. Только если море спокойное.</td></tr>
+      <tr><td class="time-col">14 июня</td><td>💆 Спа 16:00: Swedish 60' + Thai Herbal Facial 60'</td></tr>
+      <tr><td class="time-col">16 июня</td><td>🏍 Юг острова: Wat Хуа Тхан, пляж Ламай, Grandfather Rock</td></tr>
+      <tr><td class="time-col">16 июня</td><td>💆 Спа 15:00: Aroma Massage 90'</td></tr>
+    </table>
+    <a class="link-row" href="https://maps.google.com/?q=Fisherman+Village+Walking+Street+Bophut+Koh+Samui" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Fisherman's Village, Bophut<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 17 июня -->
+  <div class="day-header">
+    <div class="day-date">17 июня (ср)</div>
+    <div class="day-title">Самуи → Дон Сак → Кханом</div>
+  </div>
+  <div class="warn-box">⚠ <b>Чек-аут до 12:00</b> — паром в 15:00. SALA → пирс Натхон 25 км (~30 мин).</div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">До 12:00</td><td>Чек-аут из SALA</td></tr>
+      <tr><td class="time-col">12:00</td><td>Финальный обед на Самуи — Pi Samui или The Mother</td></tr>
+      <tr><td class="time-col">13:30</td><td>Выезд SALA → пирс Натхон (25 км, ~30 мин)</td></tr>
+      <tr><td class="time-col">14:00</td><td>Прибытие пирс Натхон, регистрация Prepaid Ticket</td></tr>
+      <tr><td class="time-col"><strong>15:00</strong></td><td>🚢 Паром Натхон → Дон Сак (билет №202601687152)</td></tr>
+      <tr><td class="time-col">16:30</td><td>Прибытие Дон Сак</td></tr>
+      <tr><td class="time-col">17:00</td><td>🍽 Ужин: Pa Ting в Дон Саке (Michelin Guide)</td></tr>
+      <tr><td class="time-col">18:00</td><td>Выезд в Кханом (27 км, ~30 мин)</td></tr>
+      <tr><td class="time-col">18:30</td><td>Чек-ин Aava Resort &amp; Spa</td></tr>
+    </table>
+    <div class="info-box" style="margin-top:6px">
+      <div class="row"><span class="lbl">⭐</span><span class="val">При заселении: заказать тур на дельфинов на 07:30 18 июня через ресепшн</span></div>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Nathon+Pier+Koh+Samui" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Пирс Натхон (Koh Samui)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="https://maps.google.com/?q=Pa+Ting+Restaurant+Don+Sak+Surat+Thani" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Pa Ting, Дон Сак (Michelin Guide)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <!-- 18 июня -->
+  <div class="day-header">
+    <div class="day-date">18 июня (чт)</div>
+    <div class="day-title">Кханом → Хуа Хин → Бангкок</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">07:30</td><td>🐬 Тур на розовых дельфинов — Khanom Fishing &amp; Tour (~2 часа)</td></tr>
+      <tr><td class="time-col">10:00</td><td>Выезд из Aava Resort</td></tr>
+      <tr><td class="time-col">13:30</td><td>🍽 Обед в Хуа Хине — Ketsarin (пирс) или Sang Thai Seafood</td></tr>
+      <tr><td class="time-col">15:00</td><td>💆 Foot massage 30–60 мин — Royal Silk Thai Massage, Naresdamri Rd</td></tr>
+      <tr><td class="time-col">16:00</td><td>Выезд в Бангкок (640 км, ~7 ч, Waze!)</td></tr>
+      <tr><td class="time-col">19:00</td><td>Чек-ин The Sukhothai Bangkok</td></tr>
+      <tr><td class="time-col">20:00</td><td>🍽 Ужин — Celadon (в отеле), бронь: +66 2 344 8888</td></tr>
+    </table>
+  </div>
+
+  <!-- 19 июня -->
+  <div class="day-header">
+    <div class="day-date">19 июня (пт)</div>
+    <div class="day-title">Вылет домой</div>
+  </div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">07:00</td><td>Завтрак в The Sukhothai</td></tr>
+      <tr><td class="time-col">08:30</td><td>Выезд в Суварнабхуми BKK (~25–30 мин)</td></tr>
+      <tr><td class="time-col">09:00</td><td>Сдача авто (уровень Б, зона возврата Localrent)</td></tr>
+      <tr><td class="time-col">09:30</td><td>Регистрация на рейс SU273</td></tr>
+      <tr><td class="time-col">11:30</td><td>Паспортный контроль, посадочная зона</td></tr>
+      <tr><td class="time-col"><strong>13:20</strong></td><td>✈ <strong>SU273</strong> Бангкок BKK → Москва SVO</td></tr>
+      <tr><td class="time-col">19:00</td><td>Прибытие SVO (по московскому времени)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ РЕСТОРАНЫ БАНГКОК -->
+<div id="bkk-food" class="anchor">
+  <div class="section-banner">🍽 Рестораны: Бангкок</div>
+  <p style="font-size:.82rem;color:var(--muted);margin:4px 0 10px">9–10 июня (Chatrium) · 18–19 июня (Sukhothai) · Районы: Силом, Сатхон, Чароен Крунг</p>
+
+  <div class="sec-sub">Для него — морепродукты, тайская без MSG</div>
+
+  <!-- Nahm -->
+  <div class="card">
+    <div class="card-title">Nahm</div>
+    <div class="card-meta">
+      <span class="badge badge-green">★ Michelin</span>
+      <span class="badge badge-teal">для него и обоих</span>
+      <span class="badge badge-orange">1 800–3 600 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Nahm+Restaurant+COMO+Metropolitan+Bangkok+27+South+Sathorn" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">27 South Sathorn Rd, COMO Metropolitan<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6626253388">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 625 3388<small>Позвонить · бронировать за 3–7 дней</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 18:00–22:00<small>Только ужин</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Gaeng Pu Bai Cha Plu</strong> — карри с голубым крабом по-южному</li>
+      <li><strong>Gung Pad Chakram</strong> — речные креветки с чесноком и арахисом</li>
+      <li><strong>Pla Muek Pad Kai Khem</strong> — кальмар с солёным яйцом</li>
+      <li>Дегустационное меню 7 курсов</li>
+    </ul>
+    <p class="note">При бронировании: «no MSG, mild spice, no meat»</p>
+    <a href="https://www.tripadvisor.com/Restaurant_Review-g293916-d1890598-Reviews-Nahm-Bangkok.html" target="_blank" class="ext">TripAdvisor ›</a>
+  </div>
+
+  <!-- Laem Charoen -->
+  <div class="card">
+    <div class="card-title">Laem Charoen Seafood</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">для него</span>
+      <span class="badge badge-orange">400–800 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Laem+Charoen+Seafood+Silom+Complex+191+Silom+Road+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Silom Complex, G Floor, 191 Silom Road<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6622313155">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 231 3155<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 11:00–21:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Deep-fried sea bass with fish sauce</strong> — фирменное, первыми ввели в Таиланде</li>
+      <li><strong>Garlic fried freshwater shrimps</strong> — огромные свежие</li>
+      <li><strong>Crab meat curry with wild betel leaf</strong></li>
+      <li><strong>Steamed squid in lemon juice</strong></li>
+    </ul>
+    <a href="https://www.laemcharoenseafood.com/p-menu/" target="_blank" class="ext">Меню сайт ›</a>
+  </div>
+
+  <!-- Hia Wan -->
+  <div class="card">
+    <div class="card-title">Hia Wan Khao Tom Pla</div>
+    <div class="card-meta">
+      <span class="badge badge-green">Michelin Plate 2020</span>
+      <span class="badge badge-teal">для него</span>
+      <span class="badge badge-orange">от 180 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Hia+Wan+Khao+Tom+Pla+Thanon+Chan+32+Sathon+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Thanon Chan 32/2, Sathon<small>Google Maps · 15 мин от Chatrium</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6622110829">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">02-211 0829<small>Пн закрыт</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Вт–Вс 16:30–23:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Khao Tom Pla</strong> — рисовая каша с рыбой на натуральном бульоне</li>
+      <li>Моллюски, кальмар, чесночные чипсы</li>
+    </ul>
+  </div>
+
+  <!-- Celadon -->
+  <div class="card">
+    <div class="card-title">Celadon (The Sukhothai)</div>
+    <div class="card-meta">
+      <span class="badge badge-green">Michelin Recommended</span>
+      <span class="badge badge-teal">для обоих</span>
+      <span class="badge badge-orange">800–1 500 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Celadon+Restaurant+The+Sukhothai+Bangkok+13+South+Sathorn" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">The Sukhothai, 13/3 South Sathorn Road<small>Google Maps · в вашем отеле</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6623448888">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 344 8888<small>Бронировать</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ужин 17:00–23:00<small>Живые тайские танцы в 19:30 и 20:30</small></div>
+    </div>
+    <ul class="dish-list">
+      <li>Морепродукты гриль и карри из всех регионов Таиланда</li>
+    </ul>
+    <a href="https://bangkok.sukhothai.com/en/dining/celadon/" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <div class="sec-sub">Для неё — европейская, японская</div>
+
+  <!-- Le Normandie -->
+  <div class="card">
+    <div class="card-title">Anne-Sophie Pic at Le Normandie</div>
+    <div class="card-meta">
+      <span class="badge badge-green">★★ Michelin</span>
+      <span class="badge badge-teal">для неё</span>
+      <span class="badge badge-orange">5 000–8 000+ THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Le+Normandie+Mandarin+Oriental+Bangkok+48+Oriental+Avenue" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Mandarin Oriental, 48 Oriental Avenue<small>Лодка от Chatrium: Pier → Oriental Pier</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6626599000">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 659 9000<small>Бронировать за 3–7 дней</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ср–Вс 12:00–15:30 / 18:30–23:30<small>Пн–вт закрыто!</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Lobster Dashi with Red Fruits</strong></li>
+      <li><strong>Berlingots</strong> — фирменная паста шефа</li>
+    </ul>
+    <a href="https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/dine/anne-sophie-pic-at-le-normandie" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <!-- KiSara -->
+  <div class="card">
+    <div class="card-title">KiSara (Conrad Bangkok)</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">для неё и обоих</span>
+      <span class="badge badge-orange">от 680 THB (обед)</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=KiSara+Restaurant+Conrad+Bangkok+87+Wireless+Road" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Level 3, Conrad Bangkok, 87/3 Wireless Road<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6626909233">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 2 690 9233<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">11:30–14:30 / 18:00–22:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Блюдо</th><th class="price-col">Цена</th></tr>
+      <tr><td>Sashimi Gozen (5 видов + мисо)</td><td class="price-col">1 080 ฿</td></tr>
+      <tr><td>Kaisen Don (тунец, лосось, хамачи, гребешок)</td><td class="price-col">950 ฿</td></tr>
+      <tr><td>Grilled Black Cod терияки</td><td class="price-col">880 ฿</td></tr>
+      <tr><td>Tempura moriawase (креветки, рыба)</td><td class="price-col">580 ฿</td></tr>
+    </table>
+  </div>
+
+  <div class="sec-sub">💆 Массаж: Бангкок</div>
+
+  <!-- Perception -->
+  <div class="card">
+    <div class="card-title">Perception Blind Massage</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.7/5 · 533 отзыва</span>
+      <span class="badge badge-teal">РЕКОМЕНДАЦИЯ №1</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Perception+Blind+Massage+58+Soi+Sathorn+8+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">58 Soi Sathorn 8<small>5 мин от BTS Chong Nonsi, выход 2</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66822225936">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 82 222 5936<small>Бронировать за 1–2 дня</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 10:00–22:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Процедура</th><th class="price-col">Цена</th></tr>
+      <tr><td>Тайский 60 мин</td><td class="price-col">~500 ฿</td></tr>
+      <tr><td>Тайский 90 мин</td><td class="price-col">~700 ฿</td></tr>
+      <tr><td>Тайский 120 мин (пара)</td><td class="price-col">~1 440 ฿</td></tr>
+      <tr><td>Ароматерапия 60 мин</td><td class="price-col">~850 ฿</td></tr>
+    </table>
+    <p class="note">Незрячие терапевты. Для пары: 120 мин в парном номере (1 440 × 2).</p>
+    <a href="https://www.perceptionblindmassage.com" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <!-- Health Land -->
+  <div class="card">
+    <div class="card-title">Health Land Sathorn</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">надёжная сеть</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Health+Land+Spa+Massage+120+North+Sathorn+Road+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">120 North Sathorn Road<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 09:00–23:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Процедура</th><th class="price-col">Цена</th></tr>
+      <tr><td>Тайский 120 мин</td><td class="price-col">700 ฿</td></tr>
+      <tr><td>Ароматерапия 90 мин</td><td class="price-col">1 200 ฿</td></tr>
+      <tr><td>Four Hands 120 мин</td><td class="price-col">4 000 ฿</td></tr>
+    </table>
+    <a href="https://www.healthlandspa.com" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <!-- Sarin -->
+  <div class="card">
+    <div class="card-title">Sarin Thai Massage</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">ближайший к Chatrium</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Sarin+Thai+Massage+Cove+Hill+Charoen+Krung+Bangkok" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">3F Cove Hill, Thanon Charoen Krung<small>Рядом с Chatrium Riverside</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 10:00–23:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Процедура</th><th class="price-col">120 мин</th></tr>
+      <tr><td>Relaxation Journey (стопы + шея + масло)</td><td class="price-col">1 800 ฿</td></tr>
+      <tr><td>Thai + Hot Stone</td><td class="price-col">1 900 ฿</td></tr>
+      <tr><td>Aroma Oil</td><td class="price-col">2 200 ฿</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ЧАВЕНГ -->
+<div id="chaweng-food" class="anchor">
+  <div class="section-banner">🏖 Рестораны: Чавенг (10–12 июня)</div>
+  <p style="font-size:.82rem;color:var(--muted);margin:4px 0 10px">Отель: Anavana Beach Resort</p>
+
+  <div class="sec-sub">Для него</div>
+
+  <div class="card">
+    <div class="card-title">Andaman Thai Food and Seafood</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.9 · 1 040+ отзывов</span>
+      <span class="badge badge-green">✅ NO MSG</span>
+      <span class="badge badge-orange">80–350 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Andaman+Thai+Food+Seafood+162+Moo+2+Chaweng+Beach+Road+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">162/86 Moo 2, Chaweng Beach Road<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66644037000">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 64 403 7000<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 11:00–02:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Tiger Prawns BBQ</strong> — рыбу выбираешь сам у прилавка</li>
+      <li><strong>Blue Swimmer Crabs BBQ</strong> — цветочные крабы</li>
+      <li><strong>Pineapple Fried Rice with Seafood</strong></li>
+      <li>Tom Yum с морепродуктами — просить «zero spice»</li>
+    </ul>
+    <p class="note">Персонал сам спрашивает уровень остроты</p>
+    <a href="https://www.tripadvisor.com/Restaurant_Review-g676072-d25253954-Reviews-Andaman_Thai_Food_And_Seafood-Chaweng_Bophut_Ko_Samui_Surat_Thani_Province.html" target="_blank" class="ext">TripAdvisor ›</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Malee Kitchen Chaweng</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.8</span>
+      <span class="badge badge-green">✅ NO MSG · органика</span>
+      <span class="badge badge-orange">200–600 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Malee+Kitchen+Chaweng+17+Moo+3+Chaweng+Beach+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">17/58 Moo 3, Chaweng Beach<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66992329236">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 99 232 9236<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 12:00–22:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Coconut filled with seafood</strong> — «деликатес, must try»</li>
+      <li><strong>Stir-fried clams with basil</strong></li>
+      <li>Pad Thai с морепродуктами (острота по выбору)</li>
+    </ul>
+    <a href="https://www.maleekitchensamui.com" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <div class="card" style="border-left: 3px solid #E65100;">
+    <div class="card-title">Dara Serene ⭐ #1 Чавенга</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.8 · 1 740+ отзывов</span>
+      <span class="badge badge-teal">для обоих</span>
+      <span class="badge badge-orange">300–1 500 THB</span>
+    </div>
+    <div class="warn-box" style="margin-bottom:6px">⚠ Бронировать обязательно! Столики прямо на пляже, живая музыка, шоу огня.</div>
+    <a class="link-row" href="https://maps.google.com/?q=Dara+Serene+Restaurant+162+Moo+2+Chaweng+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">162/2 Moo 2, Chaweng (Dara Samui Resort)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6677231323">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 77 231 323<small>Бронировать</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">18:45–22:30 (смены: 18:45 / 20:30)<small>1-я смена — романтичнее</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Grilled Tiger Prawns</strong> — хвалят все отзывы</li>
+      <li>Для неё: стейки, западные блюда</li>
+    </ul>
+    <a href="https://darasamui.com/dining-at-dara-serene/" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <div class="sec-sub">Для неё</div>
+
+  <div class="card">
+    <div class="card-title">Giulietta e Romeo</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.8</span>
+      <span class="badge badge-teal">для неё · лучший итальянский</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Giulietta+e+Romeo+119+Moo+2+North+Chaweng+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">119/47 Moo 2, North Chaweng<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66611971080">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 61 197 1080<small>Бронировать</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ср–Вс 18:00–22:00<small style="color:var(--warn);font-weight:600">⚠ ПН–ВТ ЗАКРЫТО!</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Burrata</strong> с томатами</li>
+      <li><strong>Black truffle pizza</strong></li>
+      <li><strong>Spaghetti alle vongole</strong></li>
+      <li>Tiramisu домашний</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Benzo Sushi Bar &amp; Grill</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.9 · «Best sushi on the island»</span>
+      <span class="badge badge-teal">для неё</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Benzo+Sushi+Bar+Grill+80+Suan+Uthid+Road+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">80/29 Suan Uthid Road, Moo 3<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6677901698">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 77 901 698<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 11:30–22:30</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Norwegian salmon sashimi</strong></li>
+      <li>Maki rolls, Raw tuna</li>
+    </ul>
+  </div>
+
+  <div class="sec-sub">💆 Массаж: Чавенг</div>
+
+  <div class="card">
+    <div class="card-title">Baan Sawan Massage &amp; Spa</div>
+    <div class="card-meta">
+      <span class="badge badge-green">★ РЕКОМЕНДАЦИЯ №1</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Baan+Sawan+Massage+Spa+24+Moo+2+Chaweng+Beach+Road+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">24 Moo 2, Chaweng Beach Road<small>Напротив Starbucks у Central Festival</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66822204995">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 82 220 4995<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 10:00–00:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Процедура</th><th class="price-col">60'</th><th class="price-col">90'</th><th class="price-col">120'</th></tr>
+      <tr><td>Тайский массаж</td><td class="price-col">350</td><td class="price-col">525</td><td class="price-col">650</td></tr>
+      <tr><td>Ароматерапия</td><td class="price-col">450</td><td class="price-col">650</td><td class="price-col">800</td></tr>
+      <tr><td>Горячие камни</td><td class="price-col">650</td><td class="price-col">800</td><td class="price-col">1 000</td></tr>
+    </table>
+    <p class="note">Пакет: Scrub 30' + Aroma 90' + Facial 30' = 3 700 ฿/чел</p>
+    <a href="https://www.baansawanmassage.com" target="_blank" class="ext">Сайт ›</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ЧОЕНГ МОН -->
+<div id="choengmon-food" class="anchor">
+  <div class="section-banner">🌴 Рестораны: Чоенг Мон (12–17 июня)</div>
+  <p style="font-size:.82rem;color:var(--muted);margin:4px 0 10px">Отель: SALA Samui Choengmon ★★ Michelin Keys</p>
+
+  <div class="sec-sub">Для него</div>
+
+  <div class="card" style="border-left: 3px solid var(--teal);">
+    <div class="card-title">Mr. Eung ⭐ — главная звезда для него</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.7</span>
+      <span class="badge badge-orange">от 90 THB</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Mr+Eung+Restaurant+Thongsai+Road+Choeng+Mon+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Thongsai Road, Choeng Mon<small>~5 мин от SALA · Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Вт–Вс 13:00–22:00<small style="color:var(--warn);font-weight:600">⚠ ПН ЗАКРЫТ!</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Steamed fish with lemon-chili</strong> — белый снэппер в пароварке · АБСОЛЮТНЫЙ ХИТ Самуи</li>
+      <li><strong>Jumbo king prawns BBQ</strong> — «огромные»</li>
+      <li><strong>Barracuda in curry sauce</strong> — фирменное</li>
+      <li>Spring rolls с лапшой — уникальный рецепт, нигде больше нет</li>
+    </ul>
+    <p class="note">Приходить рано или бронировать. Советоваться с хозяевами — скажут что свежее.</p>
+    <a href="https://www.tripadvisor.com.au/Restaurant_Review-g1893002-d7717846-Reviews-Mr_Eung_Restaurant-Choeng_Mon_Bophut_Ko_Samui_Surat_Thani_Province.html" target="_blank" class="ext">TripAdvisor ›</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">The Mother Restaurant</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.6 · Travelers' Choice 2025</span>
+      <span class="badge badge-teal">для обоих</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=The+Mother+Restaurant+Choeng+Mon+Bophut+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Moo 5, Choeng Mon<small>~5 мин от SALA · Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66828142550">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 82 814 2550<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 11:00–22:30</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Fresh fish with garlic and chili (steamed)</strong> — хит ресторана</li>
+      <li><strong>Fish cakes</strong> — только рыба</li>
+      <li>Pad Thai с морепродуктами (просить без MSG)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Charm Samui</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.9 · Шеф MasterChef UK</span>
+      <span class="badge badge-teal">для обоих</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Charm+Samui+Restaurant+Fishermans+Village+Bophut+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Fisherman's Village, Bophut (~15 мин)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66661286191">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 661 286 191<small>Пн закрыт</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">14:00–поздно (пн закрыт)</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Blackened Miso Red Snapper</strong> — 480 ฿ · MUST TRY</li>
+      <li><strong>Hor Mok Ma Prow</strong> (карри из морепродуктов в кокосе) — 480 ฿</li>
+      <li>Steamed White Snapper с лимоном — 560 ฿</li>
+    </ul>
+    <a href="https://charmsamui.com" target="_blank" class="ext">Сайт ›</a>
+  </div>
+
+  <div class="sec-sub">Для неё</div>
+
+  <div class="card">
+    <div class="card-title">2 Fishes Samui</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.7 · Итальянская</span>
+      <span class="badge badge-teal">для неё и обоих</span>
+      <span class="badge badge-orange">$$$</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=2+Fishes+Samui+79+Moo+1+Bo+Put+Bophut+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">79/5 Moo 1, Bo Put (~5 мин от Fisherman's Village)<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66992819973">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 99 281 9973<small>Бронировать</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Вт–Вс 17:30–22:30<small style="color:var(--warn);font-weight:600">⚠ ПН ЗАКРЫТО!</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Frutti di Mare</strong> — паста с морепродуктами · MUST TRY (для обоих)</li>
+      <li>Iceberg salad с буратой и трюфелем</li>
+      <li><strong>Spaghetti vongole</strong></li>
+      <li>Домашний Tiramisu</li>
+    </ul>
+    <p class="note">Смотреть дощечку daily specials — рыба меняется ежедневно по уловам.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pi Samui</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.7 · #2 Чоенг Мон</span>
+      <span class="badge badge-teal">для обоих</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Pi+Samui+Restaurant+24+Moo+5+Choeng+Mon+Beach+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">24/84 Moo 5, Choeng Mon Beach<small>~3 мин от SALA · Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66934384995">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 93 438 4995<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 11:00–22:00</div>
+    </div>
+    <ul class="dish-list">
+      <li>Для неё: <strong>Spaghetti with crab</strong>, пицца с морепродуктами</li>
+      <li>Для него: Pineapple rice with seafood, Tom Yum</li>
+      <li>Для обоих: <strong>Жареный ананас с мороженым rum raisin</strong> — «обязателен»</li>
+    </ul>
+  </div>
+
+  <div class="sec-sub">Ресторан SALA (в отеле)</div>
+  <div class="card">
+    <div class="card-title">SALA Restaurant</div>
+    <div class="card-meta">
+      <span class="badge badge-orange">$$$$  +17.7% налоги</span>
+    </div>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ужин 18:00–22:30</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Блюдо</th><th>Для</th><th class="price-col">Цена</th></tr>
+      <tr><td>SEAFOOD BUCKET (краб, сибас, мидии, моллюски)</td><td>Обоих</td><td class="price-col">990 ฿</td></tr>
+      <tr><td>SEAFOOD TOWER (лобстер, краб, устрицы, тунец)</td><td>Обоих</td><td class="price-col">3 500 ฿</td></tr>
+      <tr><td>Steamed Fish with Lime (GF)</td><td>Его</td><td class="price-col">690 ฿</td></tr>
+      <tr><td>Prawns Tamarind (GF)</td><td>Его</td><td class="price-col">590 ฿</td></tr>
+      <tr><td>Salmon норвежский, гребешок, васаби</td><td>Её</td><td class="price-col">750 ฿</td></tr>
+      <tr><td>Osso Bucco, ризотто с шафраном</td><td>Её</td><td class="price-col">1 150 ฿</td></tr>
+    </table>
+    <a href="https://www.salasamuichoengmonmenu.com/dinner-menu.html" target="_blank" class="ext">Полное меню ›</a>
+  </div>
+
+  <div class="sec-sub">💆 Массаж: Чоенг Мон</div>
+  <div class="info-box" style="margin-bottom:8px">
+    <div class="row"><span class="lbl">SALA Spa забронировано:</span></div>
+    <div class="row"><span class="lbl">13 июня 16:00</span><span class="val">Body Scrub 30' + Massage 90'</span></div>
+    <div class="row"><span class="lbl">14 июня 16:00</span><span class="val">Swedish 60' + Herbal Facial 60'</span></div>
+    <div class="row"><span class="lbl">16 июня 15:00</span><span class="val">Aroma Massage 90'</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Nakee Thai Massage</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 5.0 · пешком от SALA</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Nakee+Thai+Massage+Choengmon+4171+Bophut+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">4171, рядом с Amazon Café, Choengmon<small>~5–10 мин пешком · Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 10:00–23:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Процедура</th><th class="price-col">60'</th><th class="price-col">90'</th><th class="price-col">120'</th></tr>
+      <tr><td>Thai Massage</td><td class="price-col">300</td><td class="price-col">500</td><td class="price-col">600</td></tr>
+      <tr><td>Aroma Oil</td><td class="price-col">400</td><td class="price-col">650</td><td class="price-col">800</td></tr>
+      <tr><td>Herbal Compress</td><td class="price-col">700</td><td class="price-col">1 150</td><td class="price-col">1 400</td></tr>
+      <tr><td>Hot Stone</td><td class="price-col">800</td><td class="price-col">1 300</td><td class="price-col">1 600</td></tr>
+    </table>
+    <a href="https://www.nakee.spa/online-reservation/book-appointment-at-choengmon-beach/" target="_blank" class="ext">Онлайн-бронирование ›</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Body &amp; Soul Samui</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 5.0 · «Лучше Four Seasons»</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Body+Soul+Health+Massage+74+Moo+5+Bophut+Koh+Samui" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">74/141 Moo 5, Bophut<small>Google Maps · все 2025-отзывы 5/5</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">Ежедневно 10:00–22:00<small>Цены уточнять</small></div>
+    </div>
+  </div>
+
+  <div class="sec-sub">📅 План по вечерам, Чоенг Мон</div>
+  <div class="card">
+    <table class="sched-table">
+      <tr><td class="time-col">12 июня</td><td>SALA Restaurant + SALA Spa (прилёт)</td></tr>
+      <tr><td class="time-col">13 июня</td><td>Mr. Eung → Nakee Thai Massage (после ужина, до 23:00)</td></tr>
+      <tr><td class="time-col">14 июня</td><td>The Mother Restaurant → Body &amp; Soul Samui</td></tr>
+      <tr><td class="time-col">15 июня</td><td>Dara Serene (<strong>бронировать! 18:45</strong>) → SALA Spa Couples</td></tr>
+      <tr><td class="time-col">16 июня</td><td>2 Fishes Samui + аперитив Charm Samui → Nakee Thai</td></tr>
+      <tr><td class="time-col">17 июня</td><td>Pi Samui — обед перед паромом</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ КХАНОМ -->
+<div id="khanom-food" class="anchor">
+  <div class="section-banner">🐬 Рестораны: Кханом (17–18 июня)</div>
+  <p style="font-size:.82rem;color:var(--muted);margin:4px 0 10px">Отель: Aava Resort &amp; Spa</p>
+
+  <div class="card">
+    <div class="card-title">Aalto Restaurant (Aava Resort)</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">для обоих · евро-азиатский фьюжн</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Aava+Resort+Spa+28+Nadan+Beach+Road+Khanom" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Aava Resort, 28/3 Moo 6, Nadan Beach Road<small>В вашем отеле · Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6675300310">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 75 300 310<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">08:00–21:45<small>Пт 17 июня — Beach BBQ! Сб 18 июня — Wine Dinner</small></div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>17 июня (пт) — Beach BBQ на пляже</strong>: морепродукты гриль</li>
+      <li>Ризотто с морепродуктами — хвалят в отзывах</li>
+      <li>Для неё: пицца cinque formaggi, шницель</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Chaplu Bistro</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.8</span>
+      <span class="badge badge-teal">для него · южно-тайская</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Chaplu+Bistro+23+Moo+8+Khanom+Nakhon+Si+Thammarat" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">23 Moo 8, Khanom<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66818754757">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 81 875 4757<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">10:00–20:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Кефаль жареная с куркумой и чесноком</strong> — часто упоминается</li>
+      <li>Рис с крабом, кальмары</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Le Petit Saint Tropez</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.6</span>
+      <span class="badge badge-teal">для неё · французская</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Le+Petit+Saint+Tropez+Soi+Phuyaikem+Nadan+Beach+Khanom" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Soi Phuyaikem, Nadan Beach, Khanom<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66632104993">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 63 210 4993<small>Бронировать</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">12:00–20:30</div>
+    </div>
+    <ul class="dish-list">
+      <li>Французская + средиземноморская кухня</li>
+      <li>Пицца, морепродукты по-французски, бургеры</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ХУА ХИН -->
+<div id="huahin-food" class="anchor">
+  <div class="section-banner">🦀 Хуа Хин — обед 18 июня (~13:30)</div>
+  <p style="font-size:.82rem;color:var(--muted);margin:4px 0 10px">Остановка на трассе Кханом → Бангкок · Набережная Нарэсдамри</p>
+
+  <div class="card" style="border-left:3px solid var(--teal)">
+    <div class="card-title">Ketsarin Restaurant — столики на пирсе над морем ⭐</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">для обоих · вид на море</span>
+      <span class="badge badge-orange">~1 800 THB/двое</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Ketsarin+Restaurant+17+Naresdamri+Road+Hua+Hin" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">17/1 Naresdamri Road<small>Google Maps · деревянный пирс над водой</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+6632511339">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 32 511 339<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">11:00–22:00</div>
+    </div>
+    <ul class="dish-list">
+      <li><strong>Паровая рыба (sea bass)</strong> — главная рекомендация</li>
+      <li>Steamed squid in chili-lime</li>
+      <li>Стеклянная лапша с морепродуктами</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Sang Thai Seafood</div>
+    <div class="card-meta">
+      <span class="badge badge-teal">для него</span>
+      <span class="badge badge-orange">$$</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Sang+Thai+Seafood+24+Naresdamri+Road+Soi+55+Hua+Hin" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">24 Naresdamri Road, Hua Hin Soi 55<small>Google Maps · переехал с пирса в 2017</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="tel:+66990520099">
+      <div class="icon icon-tel">📞</div>
+      <div class="ltext">+66 99 052 0099<small>Позвонить</small></div><span class="chevron">›</span>
+    </a>
+    <ul class="dish-list">
+      <li><strong>Garlic Shrimps</strong> — must try, ~250–350 ฿</li>
+      <li>Рыба паровая целая ~550 ฿</li>
+      <li>Crab fried rice ~200 ฿</li>
+    </ul>
+  </div>
+
+  <div class="sec-sub">💆 Массаж: Хуа Хин (после обеда, пешком)</div>
+
+  <div class="card">
+    <div class="card-title">Royal Silk Thai Massage</div>
+    <div class="card-meta">
+      <span class="badge badge-green">⭐ 4.6 · 81 отзыв</span>
+      <span class="badge badge-teal">пешком от ресторанов</span>
+    </div>
+    <a class="link-row" href="https://maps.google.com/?q=Royal+Silk+Thai+Massage+Naresdamri+Road+Hua+Hin+near+Hilton" target="_blank">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">Naresdamri Road, напротив Hilton<small>Google Maps · пешком от Ketsarin</small></div><span class="chevron">›</span>
+    </a>
+    <div class="link-row">
+      <div class="icon icon-time">🕐</div>
+      <div class="ltext">11:00–22:00</div>
+    </div>
+    <table class="price-table" style="margin-top:8px">
+      <tr><th>Услуга</th><th class="price-col">Цена</th></tr>
+      <tr><td>Foot Massage 30 мин</td><td class="price-col">~125 ฿</td></tr>
+      <tr><td>Foot Massage 60 мин</td><td class="price-col">~250 ฿</td></tr>
+    </table>
+    <p class="note">«Went several times, prices very reasonable» (Jan 2026)</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ФРАЗЫ -->
+<div id="phrases" class="anchor">
+  <div class="section-banner">🗣 Тайские фразы</div>
+  <div class="phrase-box">
+    <div class="phrase-main">«Mai phet, mai sai phong churot»</div>
+    <div style="font-size:.85rem;color:var(--muted);margin-bottom:10px">Произносить при каждом заказе в тайских заведениях</div>
+    <table class="phrase-table">
+      <tr>
+        <td>Без глутамата (MSG)</td>
+        <td>Mai sai phong churot</td>
+        <td>ไม่ใส่ผงชูรส</td>
+      </tr>
+      <tr>
+        <td>Не острое</td>
+        <td>Mai phet</td>
+        <td>ไม่เผ็ด</td>
+      </tr>
+      <tr>
+        <td>Без мяса</td>
+        <td>Mai sai nuea</td>
+        <td>ไม่ใส่เนื้อ</td>
+      </tr>
+      <tr>
+        <td>Паровая рыба</td>
+        <td>Pla neung</td>
+        <td>ปลานึ่ง</td>
+      </tr>
+      <tr>
+        <td>Морепродукты</td>
+        <td>Ahaan talay</td>
+        <td>อาหารทะเล</td>
+      </tr>
+      <tr>
+        <td>Только рыба/морепродукты</td>
+        <td>Sai kae pla lae ahaan talay</td>
+        <td>ใส่แค่ปลาและอาหารทะเล</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ДЕНЬГИ -->
+<div id="money" class="anchor">
+  <div class="section-banner">💱 Деньги · Связь · Советы</div>
+
+  <div class="card">
+    <div class="card-title">Обмен валюты</div>
+    <ul class="dish-list">
+      <li>BKK аэропорт при прилёте: SuperRich / Happy Rich, Floor B — взять $100–150</li>
+      <li>Бангкок 9 июня (основной): SuperRich Orange, CentralWorld — $400–600</li>
+      <li>Лайфхак: <strong>купюры $100</strong> дают лучший курс</li>
+      <li>Самуи: BP Change (синие будки у Central Festival Chaweng)</li>
+    </ul>
+    <a class="link-row" href="https://maps.google.com/?q=SuperRich+Thailand+CentralWorld+Bangkok" target="_blank" style="margin-top:6px">
+      <div class="icon icon-map">📍</div>
+      <div class="ltext">SuperRich Orange, CentralWorld<small>Google Maps</small></div><span class="chevron">›</span>
+    </a>
+    <a class="link-row" href="https://superrichthailand.com" target="_blank">
+      <div class="icon icon-web">🌐</div>
+      <div class="ltext">superrichthailand.com — актуальный курс</div><span class="chevron">›</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Практические советы</div>
+    <ul class="dish-list">
+      <li><strong>SIM-карта:</strong> AIS или DTAC в аэропорту, ~300–400 ฿/30 дней безлимит</li>
+      <li><strong>Навигация:</strong> Waze для трасс, Maps.me офлайн на острове</li>
+      <li><strong>Деньги:</strong> отели — карты; рынки и массаж — только наличные баты</li>
+      <li><strong>Паром:</strong> опоздание = потеря билета, стойка закрывается за 10 мин</li>
+      <li><strong>Дресс-код для храмов:</strong> плечи и колени закрыты</li>
+    </ul>
+  </div>
+
+  <div class="warn-box">⚠ <b>BKK ≠ DMK!</b> Рейс SU272 прилетает в Suvarnabhumi (BKK). Авто Localrent (ваучер №1857403) получать и сдавать в Донмыанг (DMK). Это разные аэропорты в 30 км друг от друга. WhatsApp прокатчику уже отправлен.</div>
+
+  <div style="height:30px"></div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
