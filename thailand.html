@@ -33,11 +33,13 @@
   }
 
   /* ── Header ── */
+  .sticky-wrap {
+    position: sticky; top: 0; z-index: 100;
+  }
   .site-header {
     background: var(--teal-dk);
     color: #fff;
     padding: 14px 16px 10px;
-    position: sticky; top: 0; z-index: 100;
   }
   .site-header h1 { font-size: 1.15rem; font-weight: 700; }
   .site-header p  { font-size: 0.78rem; opacity: .7; margin-top: 2px; }
@@ -48,7 +50,6 @@
     padding: 10px 16px; background: var(--teal-dk);
     border-top: 1px solid rgba(255,255,255,.15);
     scrollbar-width: none;
-    position: sticky; top: 0; z-index: 99;
   }
   .nav-scroll::-webkit-scrollbar { display: none; }
   .nav-btn {
@@ -283,6 +284,7 @@
 </head>
 <body id="top">
 
+<div class="sticky-wrap">
 <header class="site-header">
   <h1>🇹🇭 Таиланд 9–19 июня 2026</h1>
   <p>Mikhalkov Konstantin + Charkina Kseniia · Бронь Аэрофлот: BPNXZW</p>
@@ -301,6 +303,7 @@
   <a class="nav-btn" href="#road-food">🛣 По дороге на Самуи</a>
   <a class="nav-btn" href="#money">💱 Деньги</a>
 </nav>
+</div><!-- /sticky-wrap -->
 
 <div class="container">
 
